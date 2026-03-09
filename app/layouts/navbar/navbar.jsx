@@ -25,7 +25,6 @@ export const Navbar = () => {
   return (
     <header className={styles.navbar}>
       <RouterLink
-        unstable_viewTransition
         prefetch="intent"
         to="/"
         data-navbar-item
@@ -39,7 +38,6 @@ export const Navbar = () => {
         <div className={styles.navList}>
           {navLinks.map(({ label, pathname }) => (
             <RouterLink
-              unstable_viewTransition
               prefetch="intent"
               to={pathname}
               key={label}
@@ -58,7 +56,6 @@ export const Navbar = () => {
           <nav className={styles.mobileNav} data-visible={visible} ref={nodeRef}>
             {navLinks.map(({ label, pathname }, index) => (
               <RouterLink
-                unstable_viewTransition
                 prefetch="intent"
                 to={pathname}
                 key={label}
@@ -67,7 +64,7 @@ export const Navbar = () => {
                 aria-current={getCurrent(pathname)}
                 style={cssProps({
                   transitionDelay: numToMs(
-                    Number(msToNum(tokens.base.durationS)) + index * 50
+                    Number(msToNum(tokens.base.durationXS)) + index * (isMobile ? 18 : 50)
                   ),
                 })}
               >

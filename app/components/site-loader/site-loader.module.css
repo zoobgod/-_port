@@ -50,6 +50,20 @@
   .letter:last-child {
     animation-delay: 90ms;
   }
+
+  @media (--mediaTouch) {
+    .loader {
+      background: var(--background);
+      transition-duration: 320ms;
+    }
+
+    .letter,
+    .bar {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
 }
 
 @keyframes loader-letter {

@@ -98,3 +98,68 @@
   transform: translate3d(0, -2px, 0);
   border-color: color-mix(in lab, var(--text) 50%, transparent);
 }
+
+.related {
+  margin-top: clamp(1.4rem, 4vw, 2.2rem);
+  max-width: 980px;
+}
+
+.relatedGrid {
+  margin-top: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.relatedCard {
+  text-decoration: none;
+  border: 1px solid color-mix(in lab, var(--text) 20%, transparent);
+  background: color-mix(in lab, var(--text) 3%, transparent);
+  padding: 0.95rem;
+  color: inherit;
+  transition: transform var(--durationM) var(--bezierFastoutSlowin),
+    border-color var(--durationM) var(--bezierFastoutSlowin);
+}
+
+.relatedCard:hover {
+  transform: translate3d(0, -2px, 0);
+  border-color: color-mix(in lab, var(--text) 48%, transparent);
+}
+
+.relatedMeta {
+  margin: 0;
+  color: var(--textLight);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.45rem;
+}
+
+.relatedTitle {
+  margin: 0.55rem 0 0;
+  color: var(--textTitle);
+  font-size: clamp(1.05rem, 1rem + 0.65vw, 1.25rem);
+  line-height: 1.12;
+}
+
+.relatedSummary {
+  margin: 0.5rem 0 0;
+  color: var(--textBody);
+  font-size: 0.93rem;
+}
+
+.relatedStatus {
+  margin: 0.7rem 0 0;
+  color: var(--textLight);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (--mediaMobile) {
+  .relatedGrid {
+    grid-template-columns: 1fr;
+  }
+}

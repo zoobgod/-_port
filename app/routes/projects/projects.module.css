@@ -45,6 +45,9 @@
 
 .card {
   text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
   border: 1px solid color-mix(in lab, var(--text) 22%, transparent);
   background:
     linear-gradient(

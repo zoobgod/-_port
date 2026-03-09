@@ -1,0 +1,1 @@
+import{j as o}from"./jsx-runtime-DdeXCq6m.js";import{E as t}from"./error-D9utLWK1.js";import{u as i}from"./components-BNZtg1Az.js";import"./text-Bogl6b5c.js";import"./useInViewport-d-dvZKrW.js";const u=()=>[{title:"404 | Nick Arkhipov"}];function a(){const r=i();return o.jsx(t,{error:r})}export{a as ErrorBoundary,u as meta};

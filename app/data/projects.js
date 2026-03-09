@@ -33,6 +33,25 @@ export const projects = [
       'Greens represented 39.7% of A/W 27/28 forecast imagery, validating darker green momentum.',
       'Cultural momentum around gold supports Maize as a strategic neutral for accessories and footwear.',
     ],
+    showInIndex: true,
+  },
+  {
+    slug: 'accessory-story-systems',
+    title: 'Accessory Story Systems',
+    category: 'Brand Direction',
+    year: '2027',
+    status: 'Coming soon',
+    summary: 'A framework for turning product lines into coherent campaign stories.',
+    showInIndex: false,
+  },
+  {
+    slug: 'seasonal-signal-mapping',
+    title: 'Seasonal Signal Mapping',
+    category: 'Trend Intelligence',
+    year: '2027',
+    status: 'Coming soon',
+    summary: 'A model for reading behavioural and colour signals across seasonal markets.',
+    showInIndex: false,
   },
 ];
 

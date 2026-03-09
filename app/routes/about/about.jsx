@@ -17,8 +17,8 @@ export const About = () => {
         <div className={styles.photoWrap}>
           <img
             className={styles.photo}
-            src="https://placehold.co/900x1100/png?text=Nick+Arkhipov+Photo"
-            alt="Placeholder portrait of Nick Arkhipov"
+            src="https://www.dropbox.com/scl/fi/wxkjcqo18h4dymwfew0qo/main.jpg?rlkey=my2dp54w0jzxp6ckkgz5voetf&st=jl3b3rej&raw=1"
+            alt="Nick Arkhipov"
             loading="lazy"
           />
         </div>

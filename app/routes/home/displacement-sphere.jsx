@@ -80,7 +80,9 @@ export const DisplacementSphere = props => {
     };
 
     startTransition(() => {
-      geometry.current = new SphereGeometry(32, 128, 128);
+      const segments =
+        innerWidth <= media.mobile ? 56 : innerWidth <= media.tablet ? 80 : 112;
+      geometry.current = new SphereGeometry(32, segments, segments);
       sphere.current = new Mesh(geometry.current, material.current);
       sphere.current.position.z = 0;
       sphere.current.modifier = Math.random();

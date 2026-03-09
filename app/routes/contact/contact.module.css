@@ -47,6 +47,11 @@
     border-color var(--durationM) var(--bezierFastoutSlowin);
 }
 
+.email + .email {
+  margin-top: 0.65rem;
+  margin-left: 0;
+}
+
 .email:hover {
   transform: translate3d(0, -2px, 0);
   border-color: color-mix(in lab, var(--text) 50%, transparent);

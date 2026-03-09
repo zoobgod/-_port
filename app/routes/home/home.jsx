@@ -63,7 +63,9 @@ export const Home = () => {
     return () => observer.disconnect();
   }, []);
 
-  const featuredProjects = projects;
+  const featuredProjects = projects
+    .filter(project => project.showInIndex !== false)
+    .slice(0, 3);
 
   return (
     <div className={styles.home}>
@@ -82,11 +84,10 @@ export const Home = () => {
           <h1 className={styles.title}>{config.name}</h1>
           <p className={styles.description}>This website serves as Nick Arkhipov’s portfolio.</p>
           <div className={styles.actions}>
-            <RouterLink unstable_viewTransition prefetch="intent" className={styles.cta} to="/projects">
+            <RouterLink prefetch="intent" className={styles.cta} to="/projects">
               View Projects
             </RouterLink>
             <RouterLink
-              unstable_viewTransition
               prefetch="intent"
               className={styles.secondaryCta}
               to="/about"
@@ -94,7 +95,6 @@ export const Home = () => {
               About Me
             </RouterLink>
             <RouterLink
-              unstable_viewTransition
               prefetch="intent"
               className={styles.secondaryCta}
               to="/contact"
@@ -128,14 +128,13 @@ export const Home = () => {
       >
         <div className={styles.featuredHead}>
           <p className={styles.sectionLabel}>Featured</p>
-          <RouterLink unstable_viewTransition prefetch="intent" className={styles.inlineLink} to="/projects">
+          <RouterLink prefetch="intent" className={styles.inlineLink} to="/projects">
             All projects
           </RouterLink>
         </div>
         <div className={styles.grid}>
           {featuredProjects.map(project => (
             <RouterLink
-              unstable_viewTransition
               prefetch="intent"
               key={project.slug}
               to={`/projects/${project.slug}`}

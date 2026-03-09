@@ -589,7 +589,6 @@ const Button = forwardRef(({ href, ...rest }, ref) => {
   return /* @__PURE__ */ jsx(
     ButtonContent,
     {
-      unstable_viewTransition: true,
       as: Link,
       prefetch: "intent",
       to: href,
@@ -1443,17 +1442,17 @@ const navLinks = [
   }
 ];
 const socialLinks = [];
-const navbar = "_navbar_53d4n_2";
-const logo$1 = "_logo_53d4n_27";
-const wordmark = "_wordmark_53d4n_39";
-const nav = "_nav_53d4n_2";
-const navList = "_navList_53d4n_74";
-const navLink = "_navLink_53d4n_82";
-const navIcons = "_navIcons_53d4n_125";
-const navIconLink = "_navIconLink_53d4n_149";
-const navIcon = "_navIcon_53d4n_125";
-const mobileNav = "_mobileNav_53d4n_170";
-const mobileNavLink = "_mobileNavLink_53d4n_200";
+const navbar = "_navbar_h9ft0_2";
+const logo$1 = "_logo_h9ft0_27";
+const wordmark = "_wordmark_h9ft0_39";
+const nav = "_nav_h9ft0_2";
+const navList = "_navList_h9ft0_74";
+const navLink = "_navLink_h9ft0_82";
+const navIcons = "_navIcons_h9ft0_125";
+const navIconLink = "_navIconLink_h9ft0_149";
+const navIcon = "_navIcon_h9ft0_125";
+const mobileNav = "_mobileNav_h9ft0_170";
+const mobileNavLink = "_mobileNavLink_h9ft0_199";
 const styles$a = {
   navbar,
   logo: logo$1,
@@ -1480,7 +1479,6 @@ const Navbar = () => {
     /* @__PURE__ */ jsx(
       Link,
       {
-        unstable_viewTransition: true,
         prefetch: "intent",
         to: "/",
         "data-navbar-item": true,
@@ -1494,7 +1492,6 @@ const Navbar = () => {
       /* @__PURE__ */ jsx("div", { className: styles$a.navList, children: navLinks.map(({ label, pathname }) => /* @__PURE__ */ jsx(
         Link,
         {
-          unstable_viewTransition: true,
           prefetch: "intent",
           to: pathname,
           "data-navbar-item": true,
@@ -1510,7 +1507,6 @@ const Navbar = () => {
       navLinks.map(({ label, pathname }, index) => /* @__PURE__ */ jsx(
         Link,
         {
-          unstable_viewTransition: true,
           prefetch: "intent",
           to: pathname,
           className: styles$a.mobileNavLink,
@@ -1518,7 +1514,7 @@ const Navbar = () => {
           "aria-current": getCurrent(pathname),
           style: cssProps({
             transitionDelay: numToMs(
-              Number(msToNum(tokens.base.durationS)) + index * 50
+              Number(msToNum(tokens.base.durationXS)) + index * (isMobile ? 18 : 50)
             )
           }),
           children: label
@@ -1599,17 +1595,17 @@ function Progress() {
     }
   );
 }
-const loader$3 = "_loader_19bxf_2";
-const logo = "_logo_19bxf_23";
-const letter = "_letter_19bxf_34";
-const bar = "_bar_19bxf_40";
+const loader$3 = "_loader_bun21_2";
+const logo = "_logo_bun21_23";
+const letter = "_letter_bun21_34";
+const bar = "_bar_bun21_40";
 const styles$8 = {
   loader: loader$3,
   logo,
   letter,
-  "loader-letter": "_loader-letter_19bxf_1",
+  "loader-letter": "_loader-letter_bun21_1",
   bar,
-  "loader-bar": "_loader-bar_19bxf_1"
+  "loader-bar": "_loader-bar_bun21_1"
 };
 function SiteLoader() {
   const [hidden2, setHidden] = useState(false);
@@ -1674,9 +1670,7 @@ const links$1 = () => [
     crossOrigin: ""
   },
   { rel: "manifest", href: "/manifest.json" },
-  { rel: "icon", href: "/favicon.ico" },
-  { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
-  { rel: "shortcut_icon", href: "/shortcut.png", type: "image/png", sizes: "64x64" },
+  { rel: "icon", href: "/favicon.svg?v=2", type: "image/svg+xml" },
   { rel: "apple-touch-icon", href: "/icon-256.png", sizes: "256x256" },
   { rel: "author", href: "/humans.txt", type: "text/plain" }
 ];
@@ -1866,24 +1860,50 @@ const projects = [
       "Saint Laurent ranked #1 on the Lyst Index (Q3 2025), reinforcing colour-led sophistication.",
       "Greens represented 39.7% of A/W 27/28 forecast imagery, validating darker green momentum.",
       "Cultural momentum around gold supports Maize as a strategic neutral for accessories and footwear."
-    ]
+    ],
+    showInIndex: true
+  },
+  {
+    slug: "accessory-story-systems",
+    title: "Accessory Story Systems",
+    category: "Brand Direction",
+    year: "2027",
+    status: "Coming soon",
+    summary: "A framework for turning product lines into coherent campaign stories.",
+    showInIndex: false
+  },
+  {
+    slug: "seasonal-signal-mapping",
+    title: "Seasonal Signal Mapping",
+    category: "Trend Intelligence",
+    year: "2027",
+    status: "Coming soon",
+    summary: "A model for reading behavioural and colour signals across seasonal markets.",
+    showInIndex: false
   }
 ];
 function getProjectBySlug(slug) {
   return projects.find((project) => project.slug === slug);
 }
-const page$3 = "_page_slfg6_1";
-const content$2 = "_content_slfg6_5";
-const kicker$4 = "_kicker_slfg6_11";
-const title$4 = "_title_slfg6_23";
-const summary$1 = "_summary_slfg6_32";
-const metaLine = "_metaLine_slfg6_39";
-const placeholder = "_placeholder_slfg6_47";
-const placeholderLabel = "_placeholderLabel_slfg6_55";
-const placeholderValue = "_placeholderValue_slfg6_63";
-const placeholderBody = "_placeholderBody_slfg6_70";
-const list = "_list_slfg6_75";
-const back = "_back_slfg6_83";
+const page$3 = "_page_1noqx_1";
+const content$2 = "_content_1noqx_5";
+const kicker$4 = "_kicker_1noqx_11";
+const title$4 = "_title_1noqx_23";
+const summary$1 = "_summary_1noqx_32";
+const metaLine = "_metaLine_1noqx_39";
+const placeholder = "_placeholder_1noqx_47";
+const placeholderLabel = "_placeholderLabel_1noqx_55";
+const placeholderValue = "_placeholderValue_1noqx_63";
+const placeholderBody = "_placeholderBody_1noqx_70";
+const list = "_list_1noqx_75";
+const back = "_back_1noqx_83";
+const related = "_related_1noqx_102";
+const relatedGrid = "_relatedGrid_1noqx_107";
+const relatedCard = "_relatedCard_1noqx_114";
+const relatedMeta = "_relatedMeta_1noqx_129";
+const relatedTitle = "_relatedTitle_1noqx_140";
+const relatedSummary = "_relatedSummary_1noqx_147";
+const relatedStatus = "_relatedStatus_1noqx_153";
 const styles$4 = {
   page: page$3,
   content: content$2,
@@ -1896,7 +1916,14 @@ const styles$4 = {
   placeholderValue,
   placeholderBody,
   list,
-  back
+  back,
+  related,
+  relatedGrid,
+  relatedCard,
+  relatedMeta,
+  relatedTitle,
+  relatedSummary,
+  relatedStatus
 };
 async function loader$1({ params }) {
   const project = getProjectBySlug(params.slug);
@@ -1915,6 +1942,11 @@ function meta$6({ data }) {
 }
 function ProjectDetailRoute() {
   const { project } = useLoaderData();
+  const relatedProjects = projects.filter((item) => item.slug !== project.slug).slice(0, 2);
+  const keyColours = project.keyColours ?? [];
+  const designStrategies = project.designStrategies ?? [];
+  const proofPoints = project.proofPoints ?? [];
+  const showMetaLine = project.author && project.published && project.readTime && project.source;
   return /* @__PURE__ */ jsxs("div", { className: styles$4.page, children: [
     /* @__PURE__ */ jsxs(Section, { as: "article", className: styles$4.content, children: [
       /* @__PURE__ */ jsxs("p", { className: styles$4.kicker, children: [
@@ -1923,7 +1955,7 @@ function ProjectDetailRoute() {
       ] }),
       /* @__PURE__ */ jsx("h1", { className: styles$4.title, children: project.title }),
       /* @__PURE__ */ jsx("p", { className: styles$4.summary, children: project.summary }),
-      /* @__PURE__ */ jsxs("p", { className: styles$4.metaLine, children: [
+      showMetaLine && /* @__PURE__ */ jsxs("p", { className: styles$4.metaLine, children: [
         project.author,
         " · ",
         project.published,
@@ -1932,32 +1964,53 @@ function ProjectDetailRoute() {
         " · ",
         project.source
       ] }),
-      /* @__PURE__ */ jsxs("div", { className: styles$4.placeholder, children: [
+      !!project.needToKnow && /* @__PURE__ */ jsxs("div", { className: styles$4.placeholder, children: [
         /* @__PURE__ */ jsx("p", { className: styles$4.placeholderLabel, children: "Need to Know" }),
         /* @__PURE__ */ jsx("p", { className: styles$4.placeholderBody, children: project.needToKnow })
       ] }),
-      /* @__PURE__ */ jsxs("div", { className: styles$4.placeholder, children: [
+      !!project.opportunity && /* @__PURE__ */ jsxs("div", { className: styles$4.placeholder, children: [
         /* @__PURE__ */ jsx("p", { className: styles$4.placeholderLabel, children: "Opportunity" }),
         /* @__PURE__ */ jsx("p", { className: styles$4.placeholderBody, children: project.opportunity })
       ] }),
-      /* @__PURE__ */ jsxs("div", { className: styles$4.placeholder, children: [
+      !!keyColours.length && /* @__PURE__ */ jsxs("div", { className: styles$4.placeholder, children: [
         /* @__PURE__ */ jsx("p", { className: styles$4.placeholderLabel, children: "Key Colours" }),
-        /* @__PURE__ */ jsx("ul", { className: styles$4.list, children: project.keyColours.map((item) => /* @__PURE__ */ jsx("li", { children: item }, item)) })
+        /* @__PURE__ */ jsx("ul", { className: styles$4.list, children: keyColours.map((item) => /* @__PURE__ */ jsx("li", { children: item }, item)) })
       ] }),
-      /* @__PURE__ */ jsxs("div", { className: styles$4.placeholder, children: [
+      !!designStrategies.length && /* @__PURE__ */ jsxs("div", { className: styles$4.placeholder, children: [
         /* @__PURE__ */ jsx("p", { className: styles$4.placeholderLabel, children: "Design Strategies" }),
-        /* @__PURE__ */ jsx("ul", { className: styles$4.list, children: project.designStrategies.map((item) => /* @__PURE__ */ jsx("li", { children: item }, item)) })
+        /* @__PURE__ */ jsx("ul", { className: styles$4.list, children: designStrategies.map((item) => /* @__PURE__ */ jsx("li", { children: item }, item)) })
       ] }),
-      /* @__PURE__ */ jsxs("div", { className: styles$4.placeholder, children: [
+      !!proofPoints.length && /* @__PURE__ */ jsxs("div", { className: styles$4.placeholder, children: [
         /* @__PURE__ */ jsx("p", { className: styles$4.placeholderLabel, children: "Proof Points" }),
-        /* @__PURE__ */ jsx("ul", { className: styles$4.list, children: project.proofPoints.map((item) => /* @__PURE__ */ jsx("li", { children: item }, item)) })
+        /* @__PURE__ */ jsx("ul", { className: styles$4.list, children: proofPoints.map((item) => /* @__PURE__ */ jsx("li", { children: item }, item)) })
       ] }),
       /* @__PURE__ */ jsxs("div", { className: styles$4.placeholder, children: [
         /* @__PURE__ */ jsx("p", { className: styles$4.placeholderLabel, children: "Status" }),
         /* @__PURE__ */ jsx("p", { className: styles$4.placeholderValue, children: project.status }),
-        /* @__PURE__ */ jsx("p", { className: styles$4.placeholderBody, children: "Expanded report and visual boards are in progress." })
+        /* @__PURE__ */ jsx("p", { className: styles$4.placeholderBody, children: project.showInIndex === false ? "More information will be added." : "Expanded report and visual boards are in progress." })
       ] }),
-      /* @__PURE__ */ jsx(Link, { unstable_viewTransition: true, prefetch: "intent", className: styles$4.back, to: "/projects", children: "Back to Projects" })
+      !!relatedProjects.length && /* @__PURE__ */ jsxs("div", { className: styles$4.related, children: [
+        /* @__PURE__ */ jsx("p", { className: styles$4.placeholderLabel, children: "Suggested Projects" }),
+        /* @__PURE__ */ jsx("div", { className: styles$4.relatedGrid, children: relatedProjects.map((item) => /* @__PURE__ */ jsxs(
+          Link,
+          {
+            prefetch: "intent",
+            className: styles$4.relatedCard,
+            to: `/projects/${item.slug}`,
+            children: [
+              /* @__PURE__ */ jsxs("p", { className: styles$4.relatedMeta, children: [
+                item.category,
+                /* @__PURE__ */ jsx("span", { children: item.year })
+              ] }),
+              /* @__PURE__ */ jsx("h2", { className: styles$4.relatedTitle, children: item.title }),
+              /* @__PURE__ */ jsx("p", { className: styles$4.relatedSummary, children: item.summary }),
+              /* @__PURE__ */ jsx("p", { className: styles$4.relatedStatus, children: item.status })
+            ]
+          },
+          item.slug
+        )) })
+      ] }),
+      /* @__PURE__ */ jsx(Link, { prefetch: "intent", className: styles$4.back, to: "/projects", children: "Back to Projects" })
     ] }),
     /* @__PURE__ */ jsx(Footer, {})
   ] });
@@ -1997,18 +2050,18 @@ const route2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   __proto__: null,
   action
 }, Symbol.toStringTag, { value: "Module" }));
-const page$2 = "_page_1qvbs_1";
-const header = "_header_1qvbs_5";
-const kicker$3 = "_kicker_1qvbs_10";
-const title$3 = "_title_1qvbs_19";
-const copy = "_copy_1qvbs_27";
-const gridWrap = "_gridWrap_1qvbs_34";
-const grid$1 = "_grid_1qvbs_34";
-const card$1 = "_card_1qvbs_46";
-const meta$5 = "_meta_1qvbs_70";
-const cardTitle$1 = "_cardTitle_1qvbs_81";
-const summary = "_summary_1qvbs_88";
-const status = "_status_1qvbs_94";
+const page$2 = "_page_1pdvo_1";
+const header = "_header_1pdvo_5";
+const kicker$3 = "_kicker_1pdvo_10";
+const title$3 = "_title_1pdvo_19";
+const copy = "_copy_1pdvo_27";
+const gridWrap = "_gridWrap_1pdvo_34";
+const grid$1 = "_grid_1pdvo_34";
+const card$1 = "_card_1pdvo_46";
+const meta$5 = "_meta_1pdvo_73";
+const cardTitle$1 = "_cardTitle_1pdvo_84";
+const summary = "_summary_1pdvo_91";
+const status = "_status_1pdvo_97";
 const styles$3 = {
   page: page$2,
   header,
@@ -2030,16 +2083,16 @@ const meta$4 = () => {
   });
 };
 function ProjectsRoute() {
+  const visibleProjects = projects.filter((project) => project.showInIndex !== false);
   return /* @__PURE__ */ jsxs("div", { className: styles$3.page, children: [
     /* @__PURE__ */ jsxs(Section, { className: styles$3.header, as: "header", children: [
       /* @__PURE__ */ jsx("p", { className: styles$3.kicker, children: "Projects" }),
       /* @__PURE__ */ jsx("h1", { className: styles$3.title, children: "Current Focus" }),
       /* @__PURE__ */ jsx("p", { className: styles$3.copy, children: "One active case study." })
     ] }),
-    /* @__PURE__ */ jsx(Section, { className: styles$3.gridWrap, as: "section", children: /* @__PURE__ */ jsx("div", { className: styles$3.grid, children: projects.map((project) => /* @__PURE__ */ jsxs(
+    /* @__PURE__ */ jsx(Section, { className: styles$3.gridWrap, as: "section", children: /* @__PURE__ */ jsx("div", { className: styles$3.grid, children: visibleProjects.map((project) => /* @__PURE__ */ jsxs(
       Link,
       {
-        unstable_viewTransition: true,
         prefetch: "intent",
         to: `/projects/${project.slug}`,
         className: styles$3.card,
@@ -2063,13 +2116,13 @@ const route3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   default: ProjectsRoute,
   meta: meta$4
 }, Symbol.toStringTag, { value: "Module" }));
-const page$1 = "_page_1ozzz_1";
-const content$1 = "_content_1ozzz_5";
-const kicker$2 = "_kicker_1ozzz_11";
-const title$2 = "_title_1ozzz_20";
-const body = "_body_1ozzz_29";
-const email = "_email_1ozzz_36";
-const note = "_note_1ozzz_55";
+const page$1 = "_page_1ihys_1";
+const content$1 = "_content_1ihys_5";
+const kicker$2 = "_kicker_1ihys_11";
+const title$2 = "_title_1ihys_20";
+const body = "_body_1ihys_29";
+const email = "_email_1ihys_36";
+const note = "_note_1ihys_60";
 const styles$2 = {
   page: page$1,
   content: content$1,
@@ -2091,7 +2144,17 @@ const Contact = () => {
       /* @__PURE__ */ jsx("p", { className: styles$2.kicker, children: "Contact" }),
       /* @__PURE__ */ jsx("h1", { className: styles$2.title, children: "Open for projects." }),
       /* @__PURE__ */ jsx("p", { className: styles$2.body, children: "For campaign, branding, and marketing work." }),
-      /* @__PURE__ */ jsx("a", { className: styles$2.email, href: "mailto:hello@nickarkhipov.com", children: "hello@nickarkhipov.com" }),
+      /* @__PURE__ */ jsx("a", { className: styles$2.email, href: "mailto:nickarkhipov.wv@gmail.com", children: "nickarkhipov.wv@gmail.com" }),
+      /* @__PURE__ */ jsx(
+        "a",
+        {
+          className: styles$2.email,
+          href: "https://t.me/nickwangann",
+          target: "_blank",
+          rel: "noopener noreferrer",
+          children: "Telegram: @nickwangann"
+        }
+      ),
       /* @__PURE__ */ jsx("p", { className: styles$2.note, children: config.name })
     ] }),
     /* @__PURE__ */ jsx(Footer, {})
@@ -2202,7 +2265,7 @@ const styles = {
   cardStatus
 };
 const DisplacementSphere = lazy(
-  () => import("./displacement-sphere-BoE1TYyT.js").then((module) => ({ default: module.DisplacementSphere }))
+  () => import("./displacement-sphere-CFjrVR0-.js").then((module) => ({ default: module.DisplacementSphere }))
 );
 const links = () => [
   {
@@ -2253,7 +2316,7 @@ const Home = () => {
     });
     return () => observer.disconnect();
   }, []);
-  const featuredProjects = projects;
+  const featuredProjects = projects.filter((project) => project.showInIndex !== false).slice(0, 3);
   return /* @__PURE__ */ jsxs("div", { className: styles.home, children: [
     /* @__PURE__ */ jsxs(
       Section,
@@ -2270,11 +2333,10 @@ const Home = () => {
             /* @__PURE__ */ jsx("h1", { className: styles.title, children: config.name }),
             /* @__PURE__ */ jsx("p", { className: styles.description, children: "This website serves as Nick Arkhipov’s portfolio." }),
             /* @__PURE__ */ jsxs("div", { className: styles.actions, children: [
-              /* @__PURE__ */ jsx(Link, { unstable_viewTransition: true, prefetch: "intent", className: styles.cta, to: "/projects", children: "View Projects" }),
+              /* @__PURE__ */ jsx(Link, { prefetch: "intent", className: styles.cta, to: "/projects", children: "View Projects" }),
               /* @__PURE__ */ jsx(
                 Link,
                 {
-                  unstable_viewTransition: true,
                   prefetch: "intent",
                   className: styles.secondaryCta,
                   to: "/about",
@@ -2284,7 +2346,6 @@ const Home = () => {
               /* @__PURE__ */ jsx(
                 Link,
                 {
-                  unstable_viewTransition: true,
                   prefetch: "intent",
                   className: styles.secondaryCta,
                   to: "/contact",
@@ -2322,12 +2383,11 @@ const Home = () => {
         children: [
           /* @__PURE__ */ jsxs("div", { className: styles.featuredHead, children: [
             /* @__PURE__ */ jsx("p", { className: styles.sectionLabel, children: "Featured" }),
-            /* @__PURE__ */ jsx(Link, { unstable_viewTransition: true, prefetch: "intent", className: styles.inlineLink, to: "/projects", children: "All projects" })
+            /* @__PURE__ */ jsx(Link, { prefetch: "intent", className: styles.inlineLink, to: "/projects", children: "All projects" })
           ] }),
           /* @__PURE__ */ jsx("div", { className: styles.grid, children: featuredProjects.map((project) => /* @__PURE__ */ jsxs(
             Link,
             {
-              unstable_viewTransition: true,
               prefetch: "intent",
               to: `/projects/${project.slug}`,
               className: styles.card,
@@ -2371,7 +2431,7 @@ const route7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   loader,
   meta
 }, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/assets/entry.client-Un9QBlhY.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/components-BNZtg1Az.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": true, "module": "/assets/root-B5WrnwgZ.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/components-BNZtg1Az.js", "/assets/text-Bogl6b5c.js", "/assets/useInViewport-d-dvZKrW.js", "/assets/error-dd2O8XP4.js", "/assets/useWindowSize-CR_e_8sN.js", "/assets/config-oAc3TJuy.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/error-C0_9GAhU.css", "/assets/root-hUaB16u_.css"] }, "routes/projects.$slug": { "id": "routes/projects.$slug", "parentId": "routes/projects", "path": ":slug", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-BGQPnYNQ.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/meta-AxdaxOmt.js", "/assets/components-BNZtg1Az.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-BS0WGE_V.css"] }, "routes/api.set-theme": { "id": "routes/api.set-theme", "parentId": "root", "path": "api/set-theme", "index": void 0, "caseSensitive": void 0, "hasAction": true, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/api.set-theme-l0sNRNKZ.js?client-route=1", "imports": [], "css": [] }, "routes/projects": { "id": "routes/projects", "parentId": "root", "path": "projects", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-DFia2JB-.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/meta-AxdaxOmt.js", "/assets/projects-DXqU6YDr.js", "/assets/components-BNZtg1Az.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-B5mXPk5U.css"] }, "routes/contact": { "id": "routes/contact", "parentId": "root", "path": "contact", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-B__Ps1ai.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/meta-AxdaxOmt.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-DWfo5UiB.css"] }, "routes/about": { "id": "routes/about", "parentId": "root", "path": "about", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-Dl5iuoaq.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/meta-AxdaxOmt.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-C1Y1VAhZ.css"] }, "routes/home": { "id": "routes/home", "parentId": "root", "path": "home", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-DMI8Le25.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/components-BNZtg1Az.js", "/assets/meta-AxdaxOmt.js", "/assets/projects-DXqU6YDr.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-DFOhApT6.css"] }, "routes/$": { "id": "routes/$", "parentId": "root", "path": "*", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": true, "module": "/assets/_-CccOH3gI.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/useInViewport-d-dvZKrW.js", "/assets/components-BNZtg1Az.js", "/assets/error-dd2O8XP4.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/error-C0_9GAhU.css"] }, "routes/home/route": { "id": "routes/home/route", "parentId": "root", "path": "/", "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-DMI8Le25.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/components-BNZtg1Az.js", "/assets/meta-AxdaxOmt.js", "/assets/projects-DXqU6YDr.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-DFOhApT6.css"] } }, "url": "/assets/manifest-a9f246e2.js", "version": "a9f246e2" };
+const serverManifest = { "entry": { "module": "/assets/entry.client-Un9QBlhY.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/components-BNZtg1Az.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": true, "module": "/assets/root-ou38yB8P.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/components-BNZtg1Az.js", "/assets/text-Bogl6b5c.js", "/assets/useInViewport-d-dvZKrW.js", "/assets/error-D9utLWK1.js", "/assets/useWindowSize-CR_e_8sN.js", "/assets/config-oAc3TJuy.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/error-C0_9GAhU.css", "/assets/root-DppeFaG8.css"] }, "routes/projects.$slug": { "id": "routes/projects.$slug", "parentId": "routes/projects", "path": ":slug", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-CJOlO6G9.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/meta-AxdaxOmt.js", "/assets/projects-DHgoXI5Q.js", "/assets/components-BNZtg1Az.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-CIW7KU8k.css"] }, "routes/api.set-theme": { "id": "routes/api.set-theme", "parentId": "root", "path": "api/set-theme", "index": void 0, "caseSensitive": void 0, "hasAction": true, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/api.set-theme-l0sNRNKZ.js?client-route=1", "imports": [], "css": [] }, "routes/projects": { "id": "routes/projects", "parentId": "root", "path": "projects", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-C3c2hyZg.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/meta-AxdaxOmt.js", "/assets/projects-DHgoXI5Q.js", "/assets/components-BNZtg1Az.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-CwQbqAXJ.css"] }, "routes/contact": { "id": "routes/contact", "parentId": "root", "path": "contact", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-dnirp9Oy.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/meta-AxdaxOmt.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-CJ-VNY1b.css"] }, "routes/about": { "id": "routes/about", "parentId": "root", "path": "about", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-Dl5iuoaq.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/meta-AxdaxOmt.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-C1Y1VAhZ.css"] }, "routes/home": { "id": "routes/home", "parentId": "root", "path": "home", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-BhctnwEL.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/components-BNZtg1Az.js", "/assets/meta-AxdaxOmt.js", "/assets/projects-DHgoXI5Q.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-DFOhApT6.css"] }, "routes/$": { "id": "routes/$", "parentId": "root", "path": "*", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": true, "module": "/assets/_-D9LLgmIq.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/useInViewport-d-dvZKrW.js", "/assets/components-BNZtg1Az.js", "/assets/error-D9utLWK1.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/error-C0_9GAhU.css"] }, "routes/home/route": { "id": "routes/home/route", "parentId": "root", "path": "/", "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-BhctnwEL.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/components-BNZtg1Az.js", "/assets/meta-AxdaxOmt.js", "/assets/projects-DHgoXI5Q.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-DFOhApT6.css"] } }, "url": "/assets/manifest-2a2eafaf.js", "version": "2a2eafaf" };
 const mode = "production";
 const assetsBuildDirectory = "build/client";
 const basename = "/";

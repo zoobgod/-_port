@@ -13,6 +13,8 @@ export const meta = () => {
 };
 
 export default function ProjectsRoute() {
+  const visibleProjects = projects.filter(project => project.showInIndex !== false);
+
   return (
     <div className={styles.page}>
       <Section className={styles.header} as="header">
@@ -22,9 +24,8 @@ export default function ProjectsRoute() {
       </Section>
       <Section className={styles.gridWrap} as="section">
         <div className={styles.grid}>
-          {projects.map(project => (
+          {visibleProjects.map(project => (
             <RouterLink
-              unstable_viewTransition
               prefetch="intent"
               key={project.slug}
               to={`/projects/${project.slug}`}
