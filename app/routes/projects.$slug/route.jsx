@@ -37,10 +37,45 @@ export default function ProjectDetailRoute() {
         </p>
         <h1 className={styles.title}>{project.title}</h1>
         <p className={styles.summary}>{project.summary}</p>
+        <p className={styles.metaLine}>
+          {project.author} · {project.published} · {project.readTime} · {project.source}
+        </p>
+        <div className={styles.placeholder}>
+          <p className={styles.placeholderLabel}>Need to Know</p>
+          <p className={styles.placeholderBody}>{project.needToKnow}</p>
+        </div>
+        <div className={styles.placeholder}>
+          <p className={styles.placeholderLabel}>Opportunity</p>
+          <p className={styles.placeholderBody}>{project.opportunity}</p>
+        </div>
+        <div className={styles.placeholder}>
+          <p className={styles.placeholderLabel}>Key Colours</p>
+          <ul className={styles.list}>
+            {project.keyColours.map(item => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div className={styles.placeholder}>
+          <p className={styles.placeholderLabel}>Design Strategies</p>
+          <ul className={styles.list}>
+            {project.designStrategies.map(item => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div className={styles.placeholder}>
+          <p className={styles.placeholderLabel}>Proof Points</p>
+          <ul className={styles.list}>
+            {project.proofPoints.map(item => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
         <div className={styles.placeholder}>
           <p className={styles.placeholderLabel}>Status</p>
           <p className={styles.placeholderValue}>{project.status}</p>
-          <p className={styles.placeholderBody}>Detailed case study will be added.</p>
+          <p className={styles.placeholderBody}>Expanded report and visual boards are in progress.</p>
         </div>
         <RouterLink unstable_viewTransition prefetch="intent" className={styles.back} to="/projects">
           Back to Projects

@@ -1,0 +1,65 @@
+.page {
+  min-height: 100svh;
+}
+
+.content {
+  min-height: calc(100svh - 130px);
+  padding-top: clamp(6rem, 14vh, 10rem);
+  padding-bottom: clamp(3rem, 8vw, 5rem);
+  display: grid;
+  grid-template-columns: minmax(260px, 420px) minmax(0, 1fr);
+  gap: clamp(1.4rem, 4vw, 3rem);
+  align-items: start;
+}
+
+.photoWrap {
+  border: 1px solid color-mix(in lab, var(--text) 18%, transparent);
+  background: color-mix(in lab, var(--text) 4%, transparent);
+  overflow: hidden;
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 9 / 11;
+  object-fit: cover;
+}
+
+.bio {
+  max-width: 70ch;
+}
+
+.kicker {
+  margin: 0;
+  color: var(--textLight);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.title {
+  margin: 0.8rem 0 0;
+  color: var(--textTitle);
+  font-size: clamp(2rem, 6vw, 4.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.text {
+  margin: 1rem 0 0;
+  color: var(--textBody);
+  font-size: clamp(1rem, 0.9rem + 0.2vw, 1.1rem);
+  line-height: 1.65;
+}
+
+@media (--mediaTablet) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .photoWrap {
+    max-width: 360px;
+  }
+}

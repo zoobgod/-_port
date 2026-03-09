@@ -36,6 +36,14 @@
   font-size: clamp(1rem, 0.92rem + 0.35vw, 1.15rem);
 }
 
+.metaLine {
+  margin: 0.9rem 0 0;
+  color: var(--textLight);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .placeholder {
   margin-top: clamp(1.4rem, 3.8vw, 2rem);
   border: 1px solid color-mix(in lab, var(--text) 20%, transparent);
@@ -62,6 +70,14 @@
 .placeholderBody {
   margin: 0.8rem 0 0;
   color: var(--textBody);
+}
+
+.list {
+  margin: 0.8rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--textBody);
+  display: grid;
+  gap: 0.52rem;
 }
 
 .back {

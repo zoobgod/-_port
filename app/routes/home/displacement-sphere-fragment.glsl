@@ -41,9 +41,10 @@ void main() {
 
 	#include <clipping_planes_fragment>
 
-  vec3 color = vec3(vUv * (0.2 - 2.0 * noise), 1.0);
-  vec3 finalColors = vec3(color.b * 1.5, color.r, color.r);
-  vec4 diffuseColor = vec4(cos(finalColors * noise * 3.0), 1.0);
+  float wave = 0.5 + 0.5 * sin((vUv.x + vUv.y + noise * 1.8 + time * 0.15) * 6.2831853);
+  float grain = smoothstep(-0.2, 0.85, noise);
+  float mono = mix(0.12, 0.92, clamp(0.65 * wave + 0.35 * grain, 0.0, 1.0));
+  vec4 diffuseColor = vec4(vec3(mono), 1.0);
   ReflectedLight reflectedLight = ReflectedLight(vec3(0.0), vec3(0.0), vec3(0.0), vec3(0.0));
   vec3 totalEmissiveRadiance = emissive;
 

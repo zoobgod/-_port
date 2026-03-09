@@ -1,4 +1,4 @@
-import{r as mt,j as ha}from"./components-C5Mtxw5H.js";import{u as sl,a as al,b as ol,c as da,T as cl}from"./useInViewport-CA1nro3_.js";import{u as ll}from"./useWindowSize-DOBVwpHx.js";import{m as fa}from"./text-BvesrsoK.js";/**
+import{r as mt,j as ha}from"./jsx-runtime-DdeXCq6m.js";import{u as sl,a as al,b as ol,c as da,T as cl}from"./useInViewport-d-dvZKrW.js";import{u as ll}from"./useWindowSize-CR_e_8sN.js";import{m as fa}from"./text-Bogl6b5c.js";/**
  * @license
  * Copyright 2010-2023 Three.js Authors
  * SPDX-License-Identifier: MIT
@@ -3805,9 +3805,10 @@ void main() {
 
 	#include <clipping_planes_fragment>
 
-  vec3 color = vec3(vUv * (0.2 - 2.0 * noise), 1.0);
-  vec3 finalColors = vec3(color.b * 1.5, color.r, color.r);
-  vec4 diffuseColor = vec4(cos(finalColors * noise * 3.0), 1.0);
+  float wave = 0.5 + 0.5 * sin((vUv.x + vUv.y + noise * 1.8 + time * 0.15) * 6.2831853);
+  float grain = smoothstep(-0.2, 0.85, noise);
+  float mono = mix(0.12, 0.92, clamp(0.65 * wave + 0.35 * grain, 0.0, 1.0));
+  vec4 diffuseColor = vec4(vec3(mono), 1.0);
   ReflectedLight reflectedLight = ReflectedLight(vec3(0.0), vec3(0.0), vec3(0.0), vec3(0.0));
   vec3 totalEmissiveRadiance = emissive;
 

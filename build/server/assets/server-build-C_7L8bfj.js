@@ -1,7 +1,7 @@
 import { jsx, jsxs, Fragment as Fragment$1 } from "react/jsx-runtime";
 import { PassThrough } from "node:stream";
 import { createReadableStreamFromReadable, createCookieSessionStorage, json } from "@remix-run/node";
-import { RemixServer, Link as Link$1, useLocation, useNavigation, useLoaderData, useFetcher, Meta, Links, Outlet, ScrollRestoration, Scripts, useRouteError } from "@remix-run/react";
+import { RemixServer, Link, useLocation, useNavigation, useLoaderData, useFetcher, Meta, Links, Outlet, ScrollRestoration, Scripts, useRouteError } from "@remix-run/react";
 import * as isbotModule from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
 import { createContext, useContext, forwardRef, useRef, useEffect, useState, memo, Fragment, useCallback, useId, lazy, Suspense } from "react";
@@ -437,9 +437,9 @@ const Icon = forwardRef(({ icon: icon2, className, size, ...rest }, ref) => {
     }
   );
 });
-const text$4 = "_text_13dm1_2";
+const text$5 = "_text_13dm1_2";
 const styles$k = {
-  text: text$4
+  text: text$5
 };
 const Text = ({
   children,
@@ -465,12 +465,12 @@ const Text = ({
   );
 };
 const loader$5 = "_loader_1o1zt_2";
-const text$3 = "_text_1o1zt_17";
+const text$4 = "_text_1o1zt_17";
 const span = "_span_1o1zt_43";
 const loaderSpan = "_loaderSpan_1o1zt_1";
 const styles$j = {
   loader: loader$5,
-  text: text$3,
+  text: text$4,
   span,
   loaderSpan
 };
@@ -570,12 +570,12 @@ const TransitionContent = ({
   return children({ visible, status: status2, nodeRef });
 };
 const button$2 = "_button_1l2e3_2";
-const text$2 = "_text_1l2e3_132";
+const text$3 = "_text_1l2e3_132";
 const loader$4 = "_loader_1l2e3_145";
 const icon$1 = "_icon_1l2e3_158";
 const styles$i = {
   button: button$2,
-  text: text$2,
+  text: text$3,
   loader: loader$4,
   icon: icon$1
 };
@@ -590,7 +590,7 @@ const Button = forwardRef(({ href, ...rest }, ref) => {
     ButtonContent,
     {
       unstable_viewTransition: true,
-      as: Link$1,
+      as: Link,
       prefetch: "intent",
       to: href,
       ref,
@@ -690,11 +690,11 @@ const VisuallyHidden = forwardRef(
 async function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
-const text$1 = "_text_1v07c_2";
+const text$2 = "_text_1v07c_2";
 const glyph = "_glyph_1v07c_9";
 const value = "_value_1v07c_16";
 const styles$g = {
-  text: text$1,
+  text: text$2,
   glyph,
   value
 };
@@ -861,25 +861,25 @@ const Heading = ({
     }
   ) });
 };
-const page$3 = "_page_memxv_2";
+const page$4 = "_page_memxv_2";
 const videoContainer = "_videoContainer_memxv_22";
 const video = "_video_memxv_22";
 const credit = "_credit_memxv_78";
 const details = "_details_memxv_102";
-const text = "_text_memxv_115";
-const title$4 = "_title_memxv_122";
+const text$1 = "_text_memxv_115";
+const title$5 = "_title_memxv_122";
 const titleFlatline = "_titleFlatline_memxv_123";
 const subheading = "_subheading_memxv_155";
 const description$1 = "_description_memxv_185";
 const button$1 = "_button_memxv_204";
 const styles$e = {
-  page: page$3,
+  page: page$4,
   videoContainer,
   video,
   credit,
   details,
-  text,
-  title: title$4,
+  text: text$1,
+  title: title$5,
   titleFlatline,
   subheading,
   description: description$1,
@@ -1430,6 +1430,10 @@ const navLinks = [
     pathname: "/"
   },
   {
+    label: "About",
+    pathname: "/about"
+  },
+  {
     label: "Projects",
     pathname: "/projects"
   },
@@ -1474,7 +1478,7 @@ const Navbar = () => {
   const getCurrent = (pathname) => pathname === location.pathname ? "page" : void 0;
   return /* @__PURE__ */ jsxs("header", { className: styles$a.navbar, children: [
     /* @__PURE__ */ jsx(
-      Link$1,
+      Link,
       {
         unstable_viewTransition: true,
         prefetch: "intent",
@@ -1488,7 +1492,7 @@ const Navbar = () => {
     /* @__PURE__ */ jsx(NavToggle, { onClick: () => setMenuOpen(!menuOpen), menuOpen }),
     /* @__PURE__ */ jsxs("nav", { className: styles$a.nav, children: [
       /* @__PURE__ */ jsx("div", { className: styles$a.navList, children: navLinks.map(({ label, pathname }) => /* @__PURE__ */ jsx(
-        Link$1,
+        Link,
         {
           unstable_viewTransition: true,
           prefetch: "intent",
@@ -1504,7 +1508,7 @@ const Navbar = () => {
     ] }),
     /* @__PURE__ */ jsx(Transition, { unmount: true, in: menuOpen, timeout: msToNum(tokens.base.durationL), children: ({ visible, nodeRef }) => /* @__PURE__ */ jsxs("nav", { className: styles$a.mobileNav, "data-visible": visible, ref: nodeRef, children: [
       navLinks.map(({ label, pathname }, index) => /* @__PURE__ */ jsx(
-        Link$1,
+        Link,
         {
           unstable_viewTransition: true,
           prefetch: "intent",
@@ -1787,53 +1791,19 @@ const route0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   links: links$1,
   loader: loader$2
 }, Symbol.toStringTag, { value: "Module" }));
-const link$1 = "_link_1h1qj_2";
+const footer = "_footer_2v6kj_2";
+const date = "_date_2v6kj_16";
 const styles$6 = {
-  link: link$1
-};
-const VALID_EXT = ["txt", "png", "jpg"];
-function isAnchor(href) {
-  const isValidExtension = VALID_EXT.includes(href == null ? void 0 : href.split(".").pop());
-  return (href == null ? void 0 : href.includes("://")) || (href == null ? void 0 : href[0]) === "#" || isValidExtension;
-}
-const Link = forwardRef(
-  ({ rel, target, children, secondary, className, href, ...rest }, ref) => {
-    const isExternal = href == null ? void 0 : href.includes("://");
-    const relValue = rel || (isExternal ? "noreferrer noopener" : void 0);
-    const targetValue = target || (isExternal ? "_blank" : void 0);
-    const linkProps = {
-      className: classes(styles$6.link, className),
-      ["data-secondary"]: secondary,
-      rel: relValue,
-      href,
-      target: targetValue,
-      ref,
-      ...rest
-    };
-    if (isAnchor(href)) {
-      return /* @__PURE__ */ jsx("a", { ...linkProps, href, children });
-    }
-    return /* @__PURE__ */ jsx(Link$1, { unstable_viewTransition: true, prefetch: "intent", ...linkProps, to: href, children });
-  }
-);
-const footer = "_footer_gmxrz_2";
-const link = "_link_gmxrz_16";
-const date = "_date_gmxrz_20";
-const styles$5 = {
   footer,
-  link,
   date
 };
-const Footer = ({ className }) => /* @__PURE__ */ jsx("footer", { className: classes(styles$5.footer, className), children: /* @__PURE__ */ jsxs(Text, { size: "s", align: "center", children: [
-  /* @__PURE__ */ jsx("span", { className: styles$5.date, children: `© ${(/* @__PURE__ */ new Date()).getFullYear()} ${config.name}.` }),
-  /* @__PURE__ */ jsx(Link, { secondary: true, className: styles$5.link, href: "/humans.txt", target: "_self", children: "Humans.txt" })
-] }) });
+const Footer = ({ className }) => /* @__PURE__ */ jsx("footer", { className: classes(styles$6.footer, className), children: /* @__PURE__ */ jsx(Text, { size: "s", align: "center", children: /* @__PURE__ */ jsx("span", { className: styles$6.date, children: `© ${(/* @__PURE__ */ new Date()).getFullYear()} ${config.name}` }) }) });
 const section = "_section_cvvm4_2";
-const styles$4 = {
+const styles$5 = {
   section
 };
 const Section = forwardRef(
-  ({ as: Component = "div", children, className, ...rest }, ref) => /* @__PURE__ */ jsx(Component, { className: classes(styles$4.section, className), ref, ...rest, children })
+  ({ as: Component = "div", children, className, ...rest }, ref) => /* @__PURE__ */ jsx(Component, { className: classes(styles$5.section, className), ref, ...rest, children })
 );
 const { name, url, twitter } = config;
 const defaultOgImage = `${url}/social-image.png`;
@@ -1867,61 +1837,65 @@ function baseMeta({
 }
 const projects = [
   {
-    slug: "runway-pulse",
-    title: "Runway Pulse",
-    category: "Campaign Strategy",
-    year: "2026",
-    status: "Coming soon",
-    summary: "Seasonal launch campaign framework."
-  },
-  {
-    slug: "atelier-notes",
-    title: "Atelier Notes",
-    category: "Editorial Direction",
-    year: "2026",
-    status: "Coming soon",
-    summary: "Editorial storytelling framework."
-  },
-  {
-    slug: "street-signal",
-    title: "Street Signal",
-    category: "Trend Research",
-    year: "2026",
-    status: "Coming soon",
-    summary: "Trend and audience signal tracker."
-  },
-  {
-    slug: "house-index",
-    title: "House Index",
-    category: "Brand Positioning",
-    year: "2026",
-    status: "Coming soon",
-    summary: "Brand positioning and voice system."
+    slug: "footwear-accessories-colour-forecast-aw-27-28",
+    title: "Footwear & Accessories Colour Forecast A/W 27/28",
+    category: "Footwear & Accessories",
+    year: "A/W 27/28",
+    status: "Forecast Digest",
+    summary: "A concise colour direction report that balances dependable mid-tones, poetic neutrals, and energetic brights.",
+    author: "Jane Collins",
+    published: "January 12, 2025",
+    readTime: "8 min read",
+    source: "@Theoysterverse",
+    needToKnow: "A/W 27/28 keeps long-term colour consistency while adding fresh seasonal tones for emotional consumer demand.",
+    opportunity: "Use colour to express trust, freedom, comfort, and restoration as uncertainty pushes people toward emotive buying.",
+    keyColours: [
+      "Luminous Blue: freedom and expression",
+      "Russet: trust and groundedness",
+      "Peaceful Lilac: serenity and restoration",
+      "Maize: pleasure, comfort, and a new neutral role",
+      "Deep Green: introspection and dark sophistication"
+    ],
+    designStrategies: [
+      "Drive investment purchasing with sophisticated browns, tonal greens, and reliable blues.",
+      "Use Maize as a modern neutral with gold-adjacent value and cross-season flexibility.",
+      "Mix grounded nature-led palettes with pulsating brights for clearer emotional positioning.",
+      "Build seasonal drops around tactile finishes and high-contrast colour combinations."
+    ],
+    proofPoints: [
+      "Saint Laurent ranked #1 on the Lyst Index (Q3 2025), reinforcing colour-led sophistication.",
+      "Greens represented 39.7% of A/W 27/28 forecast imagery, validating darker green momentum.",
+      "Cultural momentum around gold supports Maize as a strategic neutral for accessories and footwear."
+    ]
   }
 ];
 function getProjectBySlug(slug) {
   return projects.find((project) => project.slug === slug);
 }
-const page$2 = "_page_yn9u4_1";
-const content$1 = "_content_yn9u4_5";
-const kicker$3 = "_kicker_yn9u4_11";
-const title$3 = "_title_yn9u4_23";
-const summary$1 = "_summary_yn9u4_32";
-const placeholder = "_placeholder_yn9u4_39";
-const placeholderLabel = "_placeholderLabel_yn9u4_47";
-const placeholderValue = "_placeholderValue_yn9u4_55";
-const placeholderBody = "_placeholderBody_yn9u4_62";
-const back = "_back_yn9u4_67";
-const styles$3 = {
-  page: page$2,
-  content: content$1,
-  kicker: kicker$3,
-  title: title$3,
+const page$3 = "_page_slfg6_1";
+const content$2 = "_content_slfg6_5";
+const kicker$4 = "_kicker_slfg6_11";
+const title$4 = "_title_slfg6_23";
+const summary$1 = "_summary_slfg6_32";
+const metaLine = "_metaLine_slfg6_39";
+const placeholder = "_placeholder_slfg6_47";
+const placeholderLabel = "_placeholderLabel_slfg6_55";
+const placeholderValue = "_placeholderValue_slfg6_63";
+const placeholderBody = "_placeholderBody_slfg6_70";
+const list = "_list_slfg6_75";
+const back = "_back_slfg6_83";
+const styles$4 = {
+  page: page$3,
+  content: content$2,
+  kicker: kicker$4,
+  title: title$4,
   summary: summary$1,
+  metaLine,
   placeholder,
   placeholderLabel,
   placeholderValue,
   placeholderBody,
+  list,
   back
 };
 async function loader$1({ params }) {
@@ -1931,7 +1905,7 @@ async function loader$1({ params }) {
   }
   return json({ project });
 }
-function meta$5({ data }) {
+function meta$6({ data }) {
   var _a;
   const projectTitle = ((_a = data == null ? void 0 : data.project) == null ? void 0 : _a.title) ?? "Project";
   return baseMeta({
@@ -1941,20 +1915,49 @@ function meta$5({ data }) {
 }
 function ProjectDetailRoute() {
   const { project } = useLoaderData();
-  return /* @__PURE__ */ jsxs("div", { className: styles$3.page, children: [
-    /* @__PURE__ */ jsxs(Section, { as: "article", className: styles$3.content, children: [
-      /* @__PURE__ */ jsxs("p", { className: styles$3.kicker, children: [
+  return /* @__PURE__ */ jsxs("div", { className: styles$4.page, children: [
+    /* @__PURE__ */ jsxs(Section, { as: "article", className: styles$4.content, children: [
+      /* @__PURE__ */ jsxs("p", { className: styles$4.kicker, children: [
         project.category,
         /* @__PURE__ */ jsx("span", { children: project.year })
       ] }),
-      /* @__PURE__ */ jsx("h1", { className: styles$3.title, children: project.title }),
-      /* @__PURE__ */ jsx("p", { className: styles$3.summary, children: project.summary }),
-      /* @__PURE__ */ jsxs("div", { className: styles$3.placeholder, children: [
-        /* @__PURE__ */ jsx("p", { className: styles$3.placeholderLabel, children: "Status" }),
-        /* @__PURE__ */ jsx("p", { className: styles$3.placeholderValue, children: project.status }),
-        /* @__PURE__ */ jsx("p", { className: styles$3.placeholderBody, children: "Detailed case study will be added." })
+      /* @__PURE__ */ jsx("h1", { className: styles$4.title, children: project.title }),
+      /* @__PURE__ */ jsx("p", { className: styles$4.summary, children: project.summary }),
+      /* @__PURE__ */ jsxs("p", { className: styles$4.metaLine, children: [
+        project.author,
+        " · ",
+        project.published,
+        " · ",
+        project.readTime,
+        " · ",
+        project.source
       ] }),
-      /* @__PURE__ */ jsx(Link$1, { unstable_viewTransition: true, prefetch: "intent", className: styles$3.back, to: "/projects", children: "Back to Projects" })
+      /* @__PURE__ */ jsxs("div", { className: styles$4.placeholder, children: [
+        /* @__PURE__ */ jsx("p", { className: styles$4.placeholderLabel, children: "Need to Know" }),
+        /* @__PURE__ */ jsx("p", { className: styles$4.placeholderBody, children: project.needToKnow })
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: styles$4.placeholder, children: [
+        /* @__PURE__ */ jsx("p", { className: styles$4.placeholderLabel, children: "Opportunity" }),
+        /* @__PURE__ */ jsx("p", { className: styles$4.placeholderBody, children: project.opportunity })
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: styles$4.placeholder, children: [
+        /* @__PURE__ */ jsx("p", { className: styles$4.placeholderLabel, children: "Key Colours" }),
+        /* @__PURE__ */ jsx("ul", { className: styles$4.list, children: project.keyColours.map((item) => /* @__PURE__ */ jsx("li", { children: item }, item)) })
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: styles$4.placeholder, children: [
+        /* @__PURE__ */ jsx("p", { className: styles$4.placeholderLabel, children: "Design Strategies" }),
+        /* @__PURE__ */ jsx("ul", { className: styles$4.list, children: project.designStrategies.map((item) => /* @__PURE__ */ jsx("li", { children: item }, item)) })
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: styles$4.placeholder, children: [
+        /* @__PURE__ */ jsx("p", { className: styles$4.placeholderLabel, children: "Proof Points" }),
+        /* @__PURE__ */ jsx("ul", { className: styles$4.list, children: project.proofPoints.map((item) => /* @__PURE__ */ jsx("li", { children: item }, item)) })
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: styles$4.placeholder, children: [
+        /* @__PURE__ */ jsx("p", { className: styles$4.placeholderLabel, children: "Status" }),
+        /* @__PURE__ */ jsx("p", { className: styles$4.placeholderValue, children: project.status }),
+        /* @__PURE__ */ jsx("p", { className: styles$4.placeholderBody, children: "Expanded report and visual boards are in progress." })
+      ] }),
+      /* @__PURE__ */ jsx(Link, { unstable_viewTransition: true, prefetch: "intent", className: styles$4.back, to: "/projects", children: "Back to Projects" })
     ] }),
     /* @__PURE__ */ jsx(Footer, {})
   ] });
@@ -1963,7 +1966,7 @@ const route1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   __proto__: null,
   default: ProjectDetailRoute,
   loader: loader$1,
-  meta: meta$5
+  meta: meta$6
 }, Symbol.toStringTag, { value: "Module" }));
 const sessionStorage = createCookieSessionStorage({
   cookie: {
@@ -1994,60 +1997,60 @@ const route2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   __proto__: null,
   action
 }, Symbol.toStringTag, { value: "Module" }));
-const page$1 = "_page_714bc_1";
-const header = "_header_714bc_5";
-const kicker$2 = "_kicker_714bc_10";
-const title$2 = "_title_714bc_19";
-const copy = "_copy_714bc_27";
-const gridWrap = "_gridWrap_714bc_34";
-const grid$1 = "_grid_714bc_34";
-const card$1 = "_card_714bc_45";
-const meta$4 = "_meta_714bc_69";
-const cardTitle$1 = "_cardTitle_714bc_80";
-const summary = "_summary_714bc_87";
-const status = "_status_714bc_93";
-const styles$2 = {
-  page: page$1,
+const page$2 = "_page_1qvbs_1";
+const header = "_header_1qvbs_5";
+const kicker$3 = "_kicker_1qvbs_10";
+const title$3 = "_title_1qvbs_19";
+const copy = "_copy_1qvbs_27";
+const gridWrap = "_gridWrap_1qvbs_34";
+const grid$1 = "_grid_1qvbs_34";
+const card$1 = "_card_1qvbs_46";
+const meta$5 = "_meta_1qvbs_70";
+const cardTitle$1 = "_cardTitle_1qvbs_81";
+const summary = "_summary_1qvbs_88";
+const status = "_status_1qvbs_94";
+const styles$3 = {
+  page: page$2,
   header,
-  kicker: kicker$2,
-  title: title$2,
+  kicker: kicker$3,
+  title: title$3,
   copy,
   gridWrap,
   grid: grid$1,
   card: card$1,
-  meta: meta$4,
+  meta: meta$5,
   cardTitle: cardTitle$1,
   summary,
   status
 };
-const meta$3 = () => {
+const meta$4 = () => {
   return baseMeta({
     title: "Projects",
     description: "Project index for Nick Arkhipov."
   });
 };
 function ProjectsRoute() {
-  return /* @__PURE__ */ jsxs("div", { className: styles$2.page, children: [
-    /* @__PURE__ */ jsxs(Section, { className: styles$2.header, as: "header", children: [
-      /* @__PURE__ */ jsx("p", { className: styles$2.kicker, children: "Projects" }),
-      /* @__PURE__ */ jsx("h1", { className: styles$2.title, children: "Selected Work" }),
-      /* @__PURE__ */ jsx("p", { className: styles$2.copy, children: "Case studies in progress." })
+  return /* @__PURE__ */ jsxs("div", { className: styles$3.page, children: [
+    /* @__PURE__ */ jsxs(Section, { className: styles$3.header, as: "header", children: [
+      /* @__PURE__ */ jsx("p", { className: styles$3.kicker, children: "Projects" }),
+      /* @__PURE__ */ jsx("h1", { className: styles$3.title, children: "Current Focus" }),
+      /* @__PURE__ */ jsx("p", { className: styles$3.copy, children: "One active case study." })
     ] }),
-    /* @__PURE__ */ jsx(Section, { className: styles$2.gridWrap, as: "section", children: /* @__PURE__ */ jsx("div", { className: styles$2.grid, children: projects.map((project) => /* @__PURE__ */ jsxs(
-      Link$1,
+    /* @__PURE__ */ jsx(Section, { className: styles$3.gridWrap, as: "section", children: /* @__PURE__ */ jsx("div", { className: styles$3.grid, children: projects.map((project) => /* @__PURE__ */ jsxs(
+      Link,
       {
         unstable_viewTransition: true,
         prefetch: "intent",
         to: `/projects/${project.slug}`,
-        className: styles$2.card,
+        className: styles$3.card,
         children: [
-          /* @__PURE__ */ jsxs("p", { className: styles$2.meta, children: [
+          /* @__PURE__ */ jsxs("p", { className: styles$3.meta, children: [
             project.category,
             /* @__PURE__ */ jsx("span", { children: project.year })
           ] }),
-          /* @__PURE__ */ jsx("h2", { className: styles$2.cardTitle, children: project.title }),
-          /* @__PURE__ */ jsx("p", { className: styles$2.summary, children: project.summary }),
-          /* @__PURE__ */ jsx("p", { className: styles$2.status, children: project.status })
+          /* @__PURE__ */ jsx("h2", { className: styles$3.cardTitle, children: project.title }),
+          /* @__PURE__ */ jsx("p", { className: styles$3.summary, children: project.summary }),
+          /* @__PURE__ */ jsx("p", { className: styles$3.status, children: project.status })
         ]
       },
       project.slug
@@ -2058,38 +2061,38 @@ function ProjectsRoute() {
 const route3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: ProjectsRoute,
-  meta: meta$3
+  meta: meta$4
 }, Symbol.toStringTag, { value: "Module" }));
-const page = "_page_1ozzz_1";
-const content = "_content_1ozzz_5";
-const kicker$1 = "_kicker_1ozzz_11";
-const title$1 = "_title_1ozzz_20";
+const page$1 = "_page_1ozzz_1";
+const content$1 = "_content_1ozzz_5";
+const kicker$2 = "_kicker_1ozzz_11";
+const title$2 = "_title_1ozzz_20";
 const body = "_body_1ozzz_29";
 const email = "_email_1ozzz_36";
 const note = "_note_1ozzz_55";
-const styles$1 = {
-  page,
-  content,
-  kicker: kicker$1,
-  title: title$1,
+const styles$2 = {
+  page: page$1,
+  content: content$1,
+  kicker: kicker$2,
+  title: title$2,
   body,
   email,
   note
 };
-const meta$2 = () => {
+const meta$3 = () => {
   return baseMeta({
     title: "Contact",
     description: "Contact Nick Arkhipov."
   });
 };
 const Contact = () => {
-  return /* @__PURE__ */ jsxs("div", { className: styles$1.page, children: [
-    /* @__PURE__ */ jsxs(Section, { className: styles$1.content, as: "section", children: [
-      /* @__PURE__ */ jsx("p", { className: styles$1.kicker, children: "Contact" }),
-      /* @__PURE__ */ jsx("h1", { className: styles$1.title, children: "Open for projects." }),
-      /* @__PURE__ */ jsx("p", { className: styles$1.body, children: "For campaign, branding, and marketing work." }),
-      /* @__PURE__ */ jsx("a", { className: styles$1.email, href: "mailto:hello@nickarkhipov.com", children: "hello@nickarkhipov.com" }),
-      /* @__PURE__ */ jsx("p", { className: styles$1.note, children: config.name })
+  return /* @__PURE__ */ jsxs("div", { className: styles$2.page, children: [
+    /* @__PURE__ */ jsxs(Section, { className: styles$2.content, as: "section", children: [
+      /* @__PURE__ */ jsx("p", { className: styles$2.kicker, children: "Contact" }),
+      /* @__PURE__ */ jsx("h1", { className: styles$2.title, children: "Open for projects." }),
+      /* @__PURE__ */ jsx("p", { className: styles$2.body, children: "For campaign, branding, and marketing work." }),
+      /* @__PURE__ */ jsx("a", { className: styles$2.email, href: "mailto:hello@nickarkhipov.com", children: "hello@nickarkhipov.com" }),
+      /* @__PURE__ */ jsx("p", { className: styles$2.note, children: config.name })
     ] }),
     /* @__PURE__ */ jsx(Footer, {})
   ] });
@@ -2097,30 +2100,83 @@ const Contact = () => {
 const route4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: Contact,
+  meta: meta$3
+}, Symbol.toStringTag, { value: "Module" }));
+const page = "_page_18um6_1";
+const content = "_content_18um6_5";
+const photoWrap = "_photoWrap_18um6_15";
+const photo = "_photo_18um6_15";
+const bio = "_bio_18um6_29";
+const kicker$1 = "_kicker_18um6_33";
+const title$1 = "_title_18um6_41";
+const text = "_text_18um6_49";
+const styles$1 = {
+  page,
+  content,
+  photoWrap,
+  photo,
+  bio,
+  kicker: kicker$1,
+  title: title$1,
+  text
+};
+const meta$2 = () => {
+  return baseMeta({
+    title: "About",
+    description: "About Nick Arkhipov."
+  });
+};
+const About = () => {
+  return /* @__PURE__ */ jsxs("div", { className: styles$1.page, children: [
+    /* @__PURE__ */ jsxs(Section, { className: styles$1.content, as: "section", children: [
+      /* @__PURE__ */ jsx("div", { className: styles$1.photoWrap, children: /* @__PURE__ */ jsx(
+        "img",
+        {
+          className: styles$1.photo,
+          src: "https://placehold.co/900x1100/png?text=Nick+Arkhipov+Photo",
+          alt: "Placeholder portrait of Nick Arkhipov",
+          loading: "lazy"
+        }
+      ) }),
+      /* @__PURE__ */ jsxs("div", { className: styles$1.bio, children: [
+        /* @__PURE__ */ jsx("p", { className: styles$1.kicker, children: "About Me" }),
+        /* @__PURE__ */ jsx("h1", { className: styles$1.title, children: "Nick Arkhipov" }),
+        /* @__PURE__ */ jsx("p", { className: styles$1.text, children: "Born in Moscow, Russia in 1999, Nick is a 26-year-old fashion marketer." }),
+        /* @__PURE__ */ jsx("p", { className: styles$1.text, children: "He lived most of his life in Russia, then moved to the United States to pursue fashion, where he studied Fashion Marketing in Dallas, Texas." }),
+        /* @__PURE__ */ jsx("p", { className: styles$1.text, children: "His focus is fashion strategy, brand positioning, and colour-led storytelling for footwear and accessories." }),
+        /* @__PURE__ */ jsx("p", { className: styles$1.text, children: "Outside work, he is a jet skiing enthusiast and keeps close ties to fashion culture, trends, and visual direction." })
+      ] })
+    ] }),
+    /* @__PURE__ */ jsx(Footer, {})
+  ] });
+};
+const route5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: About,
   meta: meta$2
 }, Symbol.toStringTag, { value: "Module" }));
-const home = "_home_3q46w_1";
-const hero = "_hero_3q46w_5";
-const heroInner = "_heroInner_3q46w_12";
-const kicker = "_kicker_3q46w_27";
-const title = "_title_3q46w_35";
-const description = "_description_3q46w_44";
-const actions = "_actions_3q46w_51";
-const cta = "_cta_3q46w_58";
-const secondaryCta = "_secondaryCta_3q46w_59";
-const inlineLink = "_inlineLink_3q46w_60";
-const about = "_about_3q46w_92";
-const featured = "_featured_3q46w_93";
-const sectionLabel = "_sectionLabel_3q46w_123";
-const sectionTitle = "_sectionTitle_3q46w_132";
-const aboutText = "_aboutText_3q46w_141";
-const featuredHead = "_featuredHead_3q46w_148";
-const grid = "_grid_3q46w_166";
-const card = "_card_3q46w_173";
-const cardMeta = "_cardMeta_3q46w_193";
-const cardTitle = "_cardTitle_3q46w_204";
-const cardBody = "_cardBody_3q46w_211";
-const cardStatus = "_cardStatus_3q46w_218";
+const home = "_home_bsa8n_1";
+const hero = "_hero_bsa8n_5";
+const heroInner = "_heroInner_bsa8n_12";
+const kicker = "_kicker_bsa8n_27";
+const title = "_title_bsa8n_35";
+const description = "_description_bsa8n_44";
+const actions = "_actions_bsa8n_51";
+const cta = "_cta_bsa8n_58";
+const secondaryCta = "_secondaryCta_bsa8n_59";
+const inlineLink = "_inlineLink_bsa8n_60";
+const about = "_about_bsa8n_92";
+const featured = "_featured_bsa8n_93";
+const sectionLabel = "_sectionLabel_bsa8n_123";
+const sectionTitle = "_sectionTitle_bsa8n_132";
+const aboutText = "_aboutText_bsa8n_141";
+const featuredHead = "_featuredHead_bsa8n_148";
+const grid = "_grid_bsa8n_166";
+const card = "_card_bsa8n_173";
+const cardMeta = "_cardMeta_bsa8n_193";
+const cardTitle = "_cardTitle_bsa8n_204";
+const cardBody = "_cardBody_bsa8n_211";
+const cardStatus = "_cardStatus_bsa8n_218";
 const styles = {
   home,
   hero,
@@ -2146,7 +2202,7 @@ const styles = {
   cardStatus
 };
 const DisplacementSphere = lazy(
-  () => import("./displacement-sphere-DNDZxreI.js").then((module) => ({ default: module.DisplacementSphere }))
+  () => import("./displacement-sphere-BoE1TYyT.js").then((module) => ({ default: module.DisplacementSphere }))
 );
 const links = () => [
   {
@@ -2197,7 +2253,7 @@ const Home = () => {
     });
     return () => observer.disconnect();
   }, []);
-  const featuredProjects = projects.slice(0, 3);
+  const featuredProjects = projects;
   return /* @__PURE__ */ jsxs("div", { className: styles.home, children: [
     /* @__PURE__ */ jsxs(
       Section,
@@ -2210,13 +2266,23 @@ const Home = () => {
         children: [
           /* @__PURE__ */ jsx(Suspense, { children: /* @__PURE__ */ jsx(DisplacementSphere, {}) }),
           /* @__PURE__ */ jsxs("div", { className: styles.heroInner, children: [
-            /* @__PURE__ */ jsx("p", { className: styles.kicker, children: config.name.toUpperCase() }),
-            /* @__PURE__ */ jsx("h1", { className: styles.title, children: "Fashion Marketing, Simplified." }),
-            /* @__PURE__ */ jsx("p", { className: styles.description, children: "Strategy. Campaigns. Brand direction." }),
+            /* @__PURE__ */ jsx("p", { className: styles.kicker, children: config.role }),
+            /* @__PURE__ */ jsx("h1", { className: styles.title, children: config.name }),
+            /* @__PURE__ */ jsx("p", { className: styles.description, children: "This website serves as Nick Arkhipov’s portfolio." }),
             /* @__PURE__ */ jsxs("div", { className: styles.actions, children: [
-              /* @__PURE__ */ jsx(Link$1, { unstable_viewTransition: true, prefetch: "intent", className: styles.cta, to: "/projects", children: "View Projects" }),
+              /* @__PURE__ */ jsx(Link, { unstable_viewTransition: true, prefetch: "intent", className: styles.cta, to: "/projects", children: "View Projects" }),
               /* @__PURE__ */ jsx(
-                Link$1,
+                Link,
+                {
+                  unstable_viewTransition: true,
+                  prefetch: "intent",
+                  className: styles.secondaryCta,
+                  to: "/about",
+                  children: "About Me"
+                }
+              ),
+              /* @__PURE__ */ jsx(
+                Link,
                 {
                   unstable_viewTransition: true,
                   prefetch: "intent",
@@ -2256,10 +2322,10 @@ const Home = () => {
         children: [
           /* @__PURE__ */ jsxs("div", { className: styles.featuredHead, children: [
             /* @__PURE__ */ jsx("p", { className: styles.sectionLabel, children: "Featured" }),
-            /* @__PURE__ */ jsx(Link$1, { unstable_viewTransition: true, prefetch: "intent", className: styles.inlineLink, to: "/projects", children: "All projects" })
+            /* @__PURE__ */ jsx(Link, { unstable_viewTransition: true, prefetch: "intent", className: styles.inlineLink, to: "/projects", children: "All projects" })
           ] }),
           /* @__PURE__ */ jsx("div", { className: styles.grid, children: featuredProjects.map((project) => /* @__PURE__ */ jsxs(
-            Link$1,
+            Link,
             {
               unstable_viewTransition: true,
               prefetch: "intent",
@@ -2283,7 +2349,7 @@ const Home = () => {
     /* @__PURE__ */ jsx(Footer, {})
   ] });
 };
-const route7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const route8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: Home,
   links,
@@ -2299,13 +2365,13 @@ function ErrorBoundary() {
   const error = useRouteError();
   return /* @__PURE__ */ jsx(Error$1, { error });
 }
-const route6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const route7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   ErrorBoundary,
   loader,
   meta
 }, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/assets/entry.client-BgMC2xgf.js?client-route=1", "imports": ["/assets/components-C5Mtxw5H.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": true, "module": "/assets/root-TUIm25rL.js?client-route=1", "imports": ["/assets/components-C5Mtxw5H.js", "/assets/text-BvesrsoK.js", "/assets/useInViewport-CA1nro3_.js", "/assets/error-9cQypj0i.js", "/assets/useWindowSize-DOBVwpHx.js", "/assets/config-oAc3TJuy.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/error-C0_9GAhU.css", "/assets/root-hUaB16u_.css"] }, "routes/projects.$slug": { "id": "routes/projects.$slug", "parentId": "routes/projects", "path": ":slug", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-B8ha0Od7.js?client-route=1", "imports": ["/assets/components-C5Mtxw5H.js", "/assets/text-BvesrsoK.js", "/assets/config-oAc3TJuy.js", "/assets/meta-b0xTOwDn.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-CUrllC_C.css", "/assets/route-CwWj2HFk.css"] }, "routes/api.set-theme": { "id": "routes/api.set-theme", "parentId": "root", "path": "api/set-theme", "index": void 0, "caseSensitive": void 0, "hasAction": true, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/api.set-theme-l0sNRNKZ.js?client-route=1", "imports": [], "css": [] }, "routes/projects": { "id": "routes/projects", "parentId": "root", "path": "projects", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-duoLTwSU.js?client-route=1", "imports": ["/assets/components-C5Mtxw5H.js", "/assets/text-BvesrsoK.js", "/assets/config-oAc3TJuy.js", "/assets/meta-b0xTOwDn.js", "/assets/projects-DJ6910N_.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-CUrllC_C.css", "/assets/route-De7JvShF.css"] }, "routes/contact": { "id": "routes/contact", "parentId": "root", "path": "contact", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-C1CTMhq4.js?client-route=1", "imports": ["/assets/components-C5Mtxw5H.js", "/assets/text-BvesrsoK.js", "/assets/config-oAc3TJuy.js", "/assets/meta-b0xTOwDn.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-CUrllC_C.css", "/assets/route-DWfo5UiB.css"] }, "routes/home": { "id": "routes/home", "parentId": "root", "path": "home", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-wTIvS6b3.js?client-route=1", "imports": ["/assets/components-C5Mtxw5H.js", "/assets/text-BvesrsoK.js", "/assets/config-oAc3TJuy.js", "/assets/meta-b0xTOwDn.js", "/assets/projects-DJ6910N_.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-CUrllC_C.css", "/assets/route-B5eYOCjX.css"] }, "routes/$": { "id": "routes/$", "parentId": "root", "path": "*", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": true, "module": "/assets/_-DCYldCq1.js?client-route=1", "imports": ["/assets/components-C5Mtxw5H.js", "/assets/text-BvesrsoK.js", "/assets/useInViewport-CA1nro3_.js", "/assets/error-9cQypj0i.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/error-C0_9GAhU.css"] }, "routes/home/route": { "id": "routes/home/route", "parentId": "root", "path": "/", "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-wTIvS6b3.js?client-route=1", "imports": ["/assets/components-C5Mtxw5H.js", "/assets/text-BvesrsoK.js", "/assets/config-oAc3TJuy.js", "/assets/meta-b0xTOwDn.js", "/assets/projects-DJ6910N_.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-CUrllC_C.css", "/assets/route-B5eYOCjX.css"] } }, "url": "/assets/manifest-f7d3f22f.js", "version": "f7d3f22f" };
+const serverManifest = { "entry": { "module": "/assets/entry.client-Un9QBlhY.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/components-BNZtg1Az.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": true, "module": "/assets/root-B5WrnwgZ.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/components-BNZtg1Az.js", "/assets/text-Bogl6b5c.js", "/assets/useInViewport-d-dvZKrW.js", "/assets/error-dd2O8XP4.js", "/assets/useWindowSize-CR_e_8sN.js", "/assets/config-oAc3TJuy.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/error-C0_9GAhU.css", "/assets/root-hUaB16u_.css"] }, "routes/projects.$slug": { "id": "routes/projects.$slug", "parentId": "routes/projects", "path": ":slug", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-BGQPnYNQ.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/meta-AxdaxOmt.js", "/assets/components-BNZtg1Az.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-BS0WGE_V.css"] }, "routes/api.set-theme": { "id": "routes/api.set-theme", "parentId": "root", "path": "api/set-theme", "index": void 0, "caseSensitive": void 0, "hasAction": true, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/api.set-theme-l0sNRNKZ.js?client-route=1", "imports": [], "css": [] }, "routes/projects": { "id": "routes/projects", "parentId": "root", "path": "projects", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-DFia2JB-.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/meta-AxdaxOmt.js", "/assets/projects-DXqU6YDr.js", "/assets/components-BNZtg1Az.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-B5mXPk5U.css"] }, "routes/contact": { "id": "routes/contact", "parentId": "root", "path": "contact", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-B__Ps1ai.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/meta-AxdaxOmt.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-DWfo5UiB.css"] }, "routes/about": { "id": "routes/about", "parentId": "root", "path": "about", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-Dl5iuoaq.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/meta-AxdaxOmt.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-C1Y1VAhZ.css"] }, "routes/home": { "id": "routes/home", "parentId": "root", "path": "home", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-DMI8Le25.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/components-BNZtg1Az.js", "/assets/meta-AxdaxOmt.js", "/assets/projects-DXqU6YDr.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-DFOhApT6.css"] }, "routes/$": { "id": "routes/$", "parentId": "root", "path": "*", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": true, "module": "/assets/_-CccOH3gI.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/useInViewport-d-dvZKrW.js", "/assets/components-BNZtg1Az.js", "/assets/error-dd2O8XP4.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/error-C0_9GAhU.css"] }, "routes/home/route": { "id": "routes/home/route", "parentId": "root", "path": "/", "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-DMI8Le25.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/components-BNZtg1Az.js", "/assets/meta-AxdaxOmt.js", "/assets/projects-DXqU6YDr.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-DFOhApT6.css"] } }, "url": "/assets/manifest-a9f246e2.js", "version": "a9f246e2" };
 const mode = "production";
 const assetsBuildDirectory = "build/client";
 const basename = "/";
@@ -2354,13 +2420,21 @@ const routes = {
     caseSensitive: void 0,
     module: route4
   },
+  "routes/about": {
+    id: "routes/about",
+    parentId: "root",
+    path: "about",
+    index: void 0,
+    caseSensitive: void 0,
+    module: route5
+  },
   "routes/home": {
     id: "routes/home",
     parentId: "root",
     path: "home",
     index: void 0,
     caseSensitive: void 0,
-    module: route7
+    module: route8
   },
   "routes/$": {
     id: "routes/$",
@@ -2368,7 +2442,7 @@ const routes = {
     path: "*",
     index: void 0,
     caseSensitive: void 0,
-    module: route6
+    module: route7
   },
   "routes/home/route": {
     id: "routes/home/route",
@@ -2376,7 +2450,7 @@ const routes = {
     path: "/",
     index: true,
     caseSensitive: void 0,
-    module: route7
+    module: route8
   }
 };
 export {

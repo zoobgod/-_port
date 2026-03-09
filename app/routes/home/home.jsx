@@ -63,7 +63,7 @@ export const Home = () => {
     return () => observer.disconnect();
   }, []);
 
-  const featuredProjects = projects.slice(0, 3);
+  const featuredProjects = projects;
 
   return (
     <div className={styles.home}>
@@ -78,12 +78,20 @@ export const Home = () => {
           <DisplacementSphere />
         </Suspense>
         <div className={styles.heroInner}>
-          <p className={styles.kicker}>{config.name.toUpperCase()}</p>
-          <h1 className={styles.title}>Fashion Marketing, Simplified.</h1>
-          <p className={styles.description}>Strategy. Campaigns. Brand direction.</p>
+          <p className={styles.kicker}>{config.role}</p>
+          <h1 className={styles.title}>{config.name}</h1>
+          <p className={styles.description}>This website serves as Nick Arkhipov’s portfolio.</p>
           <div className={styles.actions}>
             <RouterLink unstable_viewTransition prefetch="intent" className={styles.cta} to="/projects">
               View Projects
+            </RouterLink>
+            <RouterLink
+              unstable_viewTransition
+              prefetch="intent"
+              className={styles.secondaryCta}
+              to="/about"
+            >
+              About Me
             </RouterLink>
             <RouterLink
               unstable_viewTransition
