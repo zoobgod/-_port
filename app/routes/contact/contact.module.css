@@ -33,32 +33,51 @@
   font-size: clamp(1rem, 0.92rem + 0.32vw, 1.15rem);
 }
 
-.email {
-  margin-top: clamp(1.5rem, 4vw, 2.5rem);
-  display: inline-block;
+.channels {
+  margin-top: clamp(1.5rem, 4vw, 2.4rem);
+  display: grid;
+  gap: 0.8rem;
+  max-width: 820px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.channel {
   text-decoration: none;
-  color: var(--textTitle);
-  border: 1px solid color-mix(in lab, var(--text) 26%, transparent);
-  padding: 0.85rem 1.1rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.82rem;
+  border: 1px solid color-mix(in lab, var(--text) 22%, transparent);
+  background: color-mix(in lab, var(--text) 3%, transparent);
+  color: inherit;
+  padding: 1rem 1.05rem;
+  display: grid;
+  gap: 0.35rem;
+  align-content: space-between;
+  min-height: 112px;
   transition: transform var(--durationM) var(--bezierFastoutSlowin),
-    border-color var(--durationM) var(--bezierFastoutSlowin);
+    border-color var(--durationM) var(--bezierFastoutSlowin),
+    background-color var(--durationM) var(--bezierFastoutSlowin);
 }
 
-.email + .email {
-  margin-top: 0.65rem;
-  margin-left: 0;
-}
-
-.email:hover {
+.channel:hover {
   transform: translate3d(0, -2px, 0);
   border-color: color-mix(in lab, var(--text) 50%, transparent);
+  background: color-mix(in lab, var(--text) 5%, transparent);
 }
 
-.note {
-  margin: 1rem 0 0;
+.channelLabel {
   color: var(--textLight);
-  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+.channelValue {
+  color: var(--textTitle);
+  font-size: clamp(1rem, 0.94rem + 0.28vw, 1.14rem);
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+@media (--mediaMobile) {
+  .channels {
+    grid-template-columns: 1fr;
+  }
 }

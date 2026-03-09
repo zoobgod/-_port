@@ -97,8 +97,8 @@ export default function ProjectDetailRoute() {
           <p className={styles.placeholderValue}>{project.status}</p>
           <p className={styles.placeholderBody}>
             {project.showInIndex === false
-              ? 'More information will be added.'
-              : 'Expanded report and visual boards are in progress.'}
+              ? 'Details will be published soon.'
+              : 'Full case materials are being prepared.'}
           </p>
         </div>
         {!!relatedProjects.length && (

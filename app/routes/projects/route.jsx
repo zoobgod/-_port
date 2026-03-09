@@ -19,8 +19,8 @@ export default function ProjectsRoute() {
     <div className={styles.page}>
       <Section className={styles.header} as="header">
         <p className={styles.kicker}>Projects</p>
-        <h1 className={styles.title}>Current Focus</h1>
-        <p className={styles.copy}>One active case study.</p>
+        <h1 className={styles.title}>Published Work</h1>
+        <p className={styles.copy}>Open a project to view details.</p>
       </Section>
       <Section className={styles.gridWrap} as="section">
         <div className={styles.grid}>

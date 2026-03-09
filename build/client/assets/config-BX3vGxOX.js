@@ -1,0 +1,1 @@
+const i="Nick Arkhipov",n="Fashion Marketer",o=["Fashion Marketing","Brand Positioning","Colour Strategy","Campaign Planning"],s="https://nickarkhipov.com",t="",c="",a="",e="https://github.com",r="NA",g={name:i,role:n,disciplines:o,url:s,bluesky:t,figma:c,github:a,repo:e,ascii:r};export{g as c};

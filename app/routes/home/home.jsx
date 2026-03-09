@@ -112,10 +112,11 @@ export const Home = () => {
         ref={aboutRef}
         data-visible={visibleSections.includes('about')}
       >
-        <p className={styles.sectionLabel}>About</p>
-        <h2 className={styles.sectionTitle}>Clear ideas. Precise execution.</h2>
+        <p className={styles.sectionLabel}>Profile</p>
+        <h2 className={styles.sectionTitle}>Professional Background</h2>
         <p className={styles.aboutText}>
-          I build focused marketing systems for fashion brands.
+          Nick Arkhipov is a fashion marketer from Moscow, Russia. He was born in 1999 and
+          studied Fashion Marketing in Dallas, Texas.
         </p>
       </Section>
 
@@ -127,9 +128,9 @@ export const Home = () => {
         data-visible={visibleSections.includes('featured')}
       >
         <div className={styles.featuredHead}>
-          <p className={styles.sectionLabel}>Featured</p>
+          <p className={styles.sectionLabel}>Project</p>
           <RouterLink prefetch="intent" className={styles.inlineLink} to="/projects">
-            All projects
+            View all
           </RouterLink>
         </div>
         <div className={styles.grid}>

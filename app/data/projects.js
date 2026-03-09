@@ -6,7 +6,7 @@ export const projects = [
     year: 'A/W 27/28',
     status: 'Forecast Digest',
     summary:
-      'A concise colour direction report that balances dependable mid-tones, poetic neutrals, and energetic brights.',
+      'A colour direction report covering mid-tones, neutrals, and bright accent directions.',
     author: 'Jane Collins',
     published: 'January 12, 2025',
     readTime: '8 min read',
@@ -37,20 +37,22 @@ export const projects = [
   },
   {
     slug: 'accessory-story-systems',
-    title: 'Accessory Story Systems',
-    category: 'Brand Direction',
+    title: 'Accessory Launch Framework',
+    category: 'Marketing Operations',
     year: '2027',
     status: 'Coming soon',
-    summary: 'A framework for turning product lines into coherent campaign stories.',
+    summary:
+      'A framework for planning accessory launches across campaign, retail, and social channels.',
     showInIndex: false,
   },
   {
     slug: 'seasonal-signal-mapping',
-    title: 'Seasonal Signal Mapping',
+    title: 'Seasonal Colour Signal Mapping',
     category: 'Trend Intelligence',
     year: '2027',
     status: 'Coming soon',
-    summary: 'A model for reading behavioural and colour signals across seasonal markets.',
+    summary:
+      'A model for tracking colour demand signals across regions and product categories.',
     showInIndex: false,
   },
 ];

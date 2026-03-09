@@ -33,8 +33,8 @@ export const About = () => {
             fashion, where he studied Fashion Marketing in Dallas, Texas.
           </p>
           <p className={styles.text}>
-            His focus is fashion strategy, brand positioning, and colour-led storytelling for
-            footwear and accessories.
+            His focus is fashion strategy, brand positioning, and colour planning for footwear and
+            accessories.
           </p>
           <p className={styles.text}>
             Outside work, he is a jet skiing enthusiast and keeps close ties to fashion culture,

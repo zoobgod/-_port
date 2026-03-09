@@ -1624,10 +1624,10 @@ function SiteLoader() {
 const name$1 = "Nick Arkhipov";
 const role = "Fashion Marketer";
 const disciplines = [
-  "Brand Storyteller",
-  "Campaign Strategist",
-  "Visual Curator",
-  "Creative Partner"
+  "Fashion Marketing",
+  "Brand Positioning",
+  "Colour Strategy",
+  "Campaign Planning"
 ];
 const url$1 = "https://nickarkhipov.com";
 const bluesky = "";
@@ -1671,8 +1671,7 @@ const links$1 = () => [
   },
   { rel: "manifest", href: "/manifest.json" },
   { rel: "icon", href: "/favicon.svg?v=2", type: "image/svg+xml" },
-  { rel: "apple-touch-icon", href: "/icon-256.png", sizes: "256x256" },
-  { rel: "author", href: "/humans.txt", type: "text/plain" }
+  { rel: "apple-touch-icon", href: "/icon-256.png", sizes: "256x256" }
 ];
 const sessionStorage$1 = createCookieSessionStorage({
   cookie: {
@@ -1836,7 +1835,7 @@ const projects = [
     category: "Footwear & Accessories",
     year: "A/W 27/28",
     status: "Forecast Digest",
-    summary: "A concise colour direction report that balances dependable mid-tones, poetic neutrals, and energetic brights.",
+    summary: "A colour direction report covering mid-tones, neutrals, and bright accent directions.",
     author: "Jane Collins",
     published: "January 12, 2025",
     readTime: "8 min read",
@@ -1865,20 +1864,20 @@ const projects = [
   },
   {
     slug: "accessory-story-systems",
-    title: "Accessory Story Systems",
-    category: "Brand Direction",
+    title: "Accessory Launch Framework",
+    category: "Marketing Operations",
     year: "2027",
     status: "Coming soon",
-    summary: "A framework for turning product lines into coherent campaign stories.",
+    summary: "A framework for planning accessory launches across campaign, retail, and social channels.",
     showInIndex: false
   },
   {
     slug: "seasonal-signal-mapping",
-    title: "Seasonal Signal Mapping",
+    title: "Seasonal Colour Signal Mapping",
     category: "Trend Intelligence",
     year: "2027",
     status: "Coming soon",
-    summary: "A model for reading behavioural and colour signals across seasonal markets.",
+    summary: "A model for tracking colour demand signals across regions and product categories.",
     showInIndex: false
   }
 ];
@@ -1987,7 +1986,7 @@ function ProjectDetailRoute() {
       /* @__PURE__ */ jsxs("div", { className: styles$4.placeholder, children: [
         /* @__PURE__ */ jsx("p", { className: styles$4.placeholderLabel, children: "Status" }),
         /* @__PURE__ */ jsx("p", { className: styles$4.placeholderValue, children: project.status }),
-        /* @__PURE__ */ jsx("p", { className: styles$4.placeholderBody, children: project.showInIndex === false ? "More information will be added." : "Expanded report and visual boards are in progress." })
+        /* @__PURE__ */ jsx("p", { className: styles$4.placeholderBody, children: project.showInIndex === false ? "Details will be published soon." : "Full case materials are being prepared." })
       ] }),
       !!relatedProjects.length && /* @__PURE__ */ jsxs("div", { className: styles$4.related, children: [
         /* @__PURE__ */ jsx("p", { className: styles$4.placeholderLabel, children: "Suggested Projects" }),
@@ -2087,8 +2086,8 @@ function ProjectsRoute() {
   return /* @__PURE__ */ jsxs("div", { className: styles$3.page, children: [
     /* @__PURE__ */ jsxs(Section, { className: styles$3.header, as: "header", children: [
       /* @__PURE__ */ jsx("p", { className: styles$3.kicker, children: "Projects" }),
-      /* @__PURE__ */ jsx("h1", { className: styles$3.title, children: "Current Focus" }),
-      /* @__PURE__ */ jsx("p", { className: styles$3.copy, children: "One active case study." })
+      /* @__PURE__ */ jsx("h1", { className: styles$3.title, children: "Published Work" }),
+      /* @__PURE__ */ jsx("p", { className: styles$3.copy, children: "Open a project to view details." })
     ] }),
     /* @__PURE__ */ jsx(Section, { className: styles$3.gridWrap, as: "section", children: /* @__PURE__ */ jsx("div", { className: styles$3.grid, children: visibleProjects.map((project) => /* @__PURE__ */ jsxs(
       Link,
@@ -2116,21 +2115,25 @@ const route3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   default: ProjectsRoute,
   meta: meta$4
 }, Symbol.toStringTag, { value: "Module" }));
-const page$1 = "_page_1ihys_1";
-const content$1 = "_content_1ihys_5";
-const kicker$2 = "_kicker_1ihys_11";
-const title$2 = "_title_1ihys_20";
-const body = "_body_1ihys_29";
-const email = "_email_1ihys_36";
-const note = "_note_1ihys_60";
+const page$1 = "_page_18cgi_1";
+const content$1 = "_content_18cgi_5";
+const kicker$2 = "_kicker_18cgi_11";
+const title$2 = "_title_18cgi_20";
+const body = "_body_18cgi_29";
+const channels = "_channels_18cgi_36";
+const channel = "_channel_18cgi_36";
+const channelLabel = "_channelLabel_18cgi_65";
+const channelValue = "_channelValue_18cgi_72";
 const styles$2 = {
   page: page$1,
   content: content$1,
   kicker: kicker$2,
   title: title$2,
   body,
-  email,
-  note
+  channels,
+  channel,
+  channelLabel,
+  channelValue
 };
 const meta$3 = () => {
   return baseMeta({
@@ -2142,20 +2145,27 @@ const Contact = () => {
   return /* @__PURE__ */ jsxs("div", { className: styles$2.page, children: [
     /* @__PURE__ */ jsxs(Section, { className: styles$2.content, as: "section", children: [
       /* @__PURE__ */ jsx("p", { className: styles$2.kicker, children: "Contact" }),
-      /* @__PURE__ */ jsx("h1", { className: styles$2.title, children: "Open for projects." }),
-      /* @__PURE__ */ jsx("p", { className: styles$2.body, children: "For campaign, branding, and marketing work." }),
-      /* @__PURE__ */ jsx("a", { className: styles$2.email, href: "mailto:nickarkhipov.wv@gmail.com", children: "nickarkhipov.wv@gmail.com" }),
-      /* @__PURE__ */ jsx(
-        "a",
-        {
-          className: styles$2.email,
-          href: "https://t.me/nickwangann",
-          target: "_blank",
-          rel: "noopener noreferrer",
-          children: "Telegram: @nickwangann"
-        }
-      ),
-      /* @__PURE__ */ jsx("p", { className: styles$2.note, children: config.name })
+      /* @__PURE__ */ jsx("h1", { className: styles$2.title, children: "Direct Contacts" }),
+      /* @__PURE__ */ jsx("p", { className: styles$2.body, children: "Use email or Telegram for project and partnership inquiries." }),
+      /* @__PURE__ */ jsxs("div", { className: styles$2.channels, children: [
+        /* @__PURE__ */ jsxs("a", { className: styles$2.channel, href: "mailto:nickarkhipov.wv@gmail.com", children: [
+          /* @__PURE__ */ jsx("span", { className: styles$2.channelLabel, children: "Email" }),
+          /* @__PURE__ */ jsx("span", { className: styles$2.channelValue, children: "nickarkhipov.wv@gmail.com" })
+        ] }),
+        /* @__PURE__ */ jsxs(
+          "a",
+          {
+            className: styles$2.channel,
+            href: "https://t.me/nickwangann",
+            target: "_blank",
+            rel: "noopener noreferrer",
+            children: [
+              /* @__PURE__ */ jsx("span", { className: styles$2.channelLabel, children: "Telegram" }),
+              /* @__PURE__ */ jsx("span", { className: styles$2.channelValue, children: "@nickwangann" })
+            ]
+          }
+        )
+      ] })
     ] }),
     /* @__PURE__ */ jsx(Footer, {})
   ] });
@@ -2196,8 +2206,8 @@ const About = () => {
         "img",
         {
           className: styles$1.photo,
-          src: "https://placehold.co/900x1100/png?text=Nick+Arkhipov+Photo",
-          alt: "Placeholder portrait of Nick Arkhipov",
+          src: "https://www.dropbox.com/scl/fi/wxkjcqo18h4dymwfew0qo/main.jpg?rlkey=my2dp54w0jzxp6ckkgz5voetf&st=jl3b3rej&raw=1",
+          alt: "Nick Arkhipov",
           loading: "lazy"
         }
       ) }),
@@ -2206,7 +2216,7 @@ const About = () => {
         /* @__PURE__ */ jsx("h1", { className: styles$1.title, children: "Nick Arkhipov" }),
         /* @__PURE__ */ jsx("p", { className: styles$1.text, children: "Born in Moscow, Russia in 1999, Nick is a 26-year-old fashion marketer." }),
         /* @__PURE__ */ jsx("p", { className: styles$1.text, children: "He lived most of his life in Russia, then moved to the United States to pursue fashion, where he studied Fashion Marketing in Dallas, Texas." }),
-        /* @__PURE__ */ jsx("p", { className: styles$1.text, children: "His focus is fashion strategy, brand positioning, and colour-led storytelling for footwear and accessories." }),
+        /* @__PURE__ */ jsx("p", { className: styles$1.text, children: "His focus is fashion strategy, brand positioning, and colour planning for footwear and accessories." }),
         /* @__PURE__ */ jsx("p", { className: styles$1.text, children: "Outside work, he is a jet skiing enthusiast and keeps close ties to fashion culture, trends, and visual direction." })
       ] })
     ] }),
@@ -2265,7 +2275,7 @@ const styles = {
   cardStatus
 };
 const DisplacementSphere = lazy(
-  () => import("./displacement-sphere-CFjrVR0-.js").then((module) => ({ default: module.DisplacementSphere }))
+  () => import("./displacement-sphere-B5yPpsel.js").then((module) => ({ default: module.DisplacementSphere }))
 );
 const links = () => [
   {
@@ -2366,9 +2376,9 @@ const Home = () => {
         ref: aboutRef,
         "data-visible": visibleSections.includes("about"),
         children: [
-          /* @__PURE__ */ jsx("p", { className: styles.sectionLabel, children: "About" }),
-          /* @__PURE__ */ jsx("h2", { className: styles.sectionTitle, children: "Clear ideas. Precise execution." }),
-          /* @__PURE__ */ jsx("p", { className: styles.aboutText, children: "I build focused marketing systems for fashion brands." })
+          /* @__PURE__ */ jsx("p", { className: styles.sectionLabel, children: "Profile" }),
+          /* @__PURE__ */ jsx("h2", { className: styles.sectionTitle, children: "Professional Background" }),
+          /* @__PURE__ */ jsx("p", { className: styles.aboutText, children: "Nick Arkhipov is a fashion marketer from Moscow, Russia. He was born in 1999 and studied Fashion Marketing in Dallas, Texas." })
         ]
       }
     ),
@@ -2382,8 +2392,8 @@ const Home = () => {
         "data-visible": visibleSections.includes("featured"),
         children: [
           /* @__PURE__ */ jsxs("div", { className: styles.featuredHead, children: [
-            /* @__PURE__ */ jsx("p", { className: styles.sectionLabel, children: "Featured" }),
-            /* @__PURE__ */ jsx(Link, { prefetch: "intent", className: styles.inlineLink, to: "/projects", children: "All projects" })
+            /* @__PURE__ */ jsx("p", { className: styles.sectionLabel, children: "Project" }),
+            /* @__PURE__ */ jsx(Link, { prefetch: "intent", className: styles.inlineLink, to: "/projects", children: "View all" })
           ] }),
           /* @__PURE__ */ jsx("div", { className: styles.grid, children: featuredProjects.map((project) => /* @__PURE__ */ jsxs(
             Link,
@@ -2431,7 +2441,7 @@ const route7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   loader,
   meta
 }, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/assets/entry.client-Un9QBlhY.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/components-BNZtg1Az.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": true, "module": "/assets/root-ou38yB8P.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/components-BNZtg1Az.js", "/assets/text-Bogl6b5c.js", "/assets/useInViewport-d-dvZKrW.js", "/assets/error-D9utLWK1.js", "/assets/useWindowSize-CR_e_8sN.js", "/assets/config-oAc3TJuy.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/error-C0_9GAhU.css", "/assets/root-DppeFaG8.css"] }, "routes/projects.$slug": { "id": "routes/projects.$slug", "parentId": "routes/projects", "path": ":slug", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-CJOlO6G9.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/meta-AxdaxOmt.js", "/assets/projects-DHgoXI5Q.js", "/assets/components-BNZtg1Az.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-CIW7KU8k.css"] }, "routes/api.set-theme": { "id": "routes/api.set-theme", "parentId": "root", "path": "api/set-theme", "index": void 0, "caseSensitive": void 0, "hasAction": true, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/api.set-theme-l0sNRNKZ.js?client-route=1", "imports": [], "css": [] }, "routes/projects": { "id": "routes/projects", "parentId": "root", "path": "projects", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-C3c2hyZg.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/meta-AxdaxOmt.js", "/assets/projects-DHgoXI5Q.js", "/assets/components-BNZtg1Az.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-CwQbqAXJ.css"] }, "routes/contact": { "id": "routes/contact", "parentId": "root", "path": "contact", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-dnirp9Oy.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/meta-AxdaxOmt.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-CJ-VNY1b.css"] }, "routes/about": { "id": "routes/about", "parentId": "root", "path": "about", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-Dl5iuoaq.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/meta-AxdaxOmt.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-C1Y1VAhZ.css"] }, "routes/home": { "id": "routes/home", "parentId": "root", "path": "home", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-BhctnwEL.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/components-BNZtg1Az.js", "/assets/meta-AxdaxOmt.js", "/assets/projects-DHgoXI5Q.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-DFOhApT6.css"] }, "routes/$": { "id": "routes/$", "parentId": "root", "path": "*", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": true, "module": "/assets/_-D9LLgmIq.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/useInViewport-d-dvZKrW.js", "/assets/components-BNZtg1Az.js", "/assets/error-D9utLWK1.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/error-C0_9GAhU.css"] }, "routes/home/route": { "id": "routes/home/route", "parentId": "root", "path": "/", "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-BhctnwEL.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-oAc3TJuy.js", "/assets/components-BNZtg1Az.js", "/assets/meta-AxdaxOmt.js", "/assets/projects-DHgoXI5Q.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-DFOhApT6.css"] } }, "url": "/assets/manifest-2a2eafaf.js", "version": "2a2eafaf" };
+const serverManifest = { "entry": { "module": "/assets/entry.client-Un9QBlhY.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/components-BNZtg1Az.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": true, "module": "/assets/root-CZMl01ZD.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/components-BNZtg1Az.js", "/assets/text-Bogl6b5c.js", "/assets/useInViewport-d-dvZKrW.js", "/assets/error-D9utLWK1.js", "/assets/useWindowSize-CR_e_8sN.js", "/assets/config-BX3vGxOX.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/error-C0_9GAhU.css", "/assets/root-DppeFaG8.css"] }, "routes/projects_.$slug": { "id": "routes/projects_.$slug", "parentId": "root", "path": "projects/:slug", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-B3j4lfTn.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-BX3vGxOX.js", "/assets/meta-Cevb6vF1.js", "/assets/projects-CRBdkuql.js", "/assets/components-BNZtg1Az.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-CIW7KU8k.css"] }, "routes/api.set-theme": { "id": "routes/api.set-theme", "parentId": "root", "path": "api/set-theme", "index": void 0, "caseSensitive": void 0, "hasAction": true, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/api.set-theme-l0sNRNKZ.js?client-route=1", "imports": [], "css": [] }, "routes/projects": { "id": "routes/projects", "parentId": "root", "path": "projects", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-ZrTP7T1W.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-BX3vGxOX.js", "/assets/meta-Cevb6vF1.js", "/assets/projects-CRBdkuql.js", "/assets/components-BNZtg1Az.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-CwQbqAXJ.css"] }, "routes/contact": { "id": "routes/contact", "parentId": "root", "path": "contact", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-9nq6tXZZ.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-BX3vGxOX.js", "/assets/meta-Cevb6vF1.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-BfFQ_NKc.css"] }, "routes/about": { "id": "routes/about", "parentId": "root", "path": "about", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-6NS8JwO8.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-BX3vGxOX.js", "/assets/meta-Cevb6vF1.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-C1Y1VAhZ.css"] }, "routes/home": { "id": "routes/home", "parentId": "root", "path": "home", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-B3XefyyX.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-BX3vGxOX.js", "/assets/components-BNZtg1Az.js", "/assets/meta-Cevb6vF1.js", "/assets/projects-CRBdkuql.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-DFOhApT6.css"] }, "routes/$": { "id": "routes/$", "parentId": "root", "path": "*", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": true, "module": "/assets/_-D9LLgmIq.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/useInViewport-d-dvZKrW.js", "/assets/components-BNZtg1Az.js", "/assets/error-D9utLWK1.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/error-C0_9GAhU.css"] }, "routes/home/route": { "id": "routes/home/route", "parentId": "root", "path": "/", "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/route-B3XefyyX.js?client-route=1", "imports": ["/assets/jsx-runtime-DdeXCq6m.js", "/assets/text-Bogl6b5c.js", "/assets/config-BX3vGxOX.js", "/assets/components-BNZtg1Az.js", "/assets/meta-Cevb6vF1.js", "/assets/projects-CRBdkuql.js"], "css": ["/assets/text-DcSU-yMW.css", "/assets/meta-Cx-vtk-g.css", "/assets/route-DFOhApT6.css"] } }, "url": "/assets/manifest-12905055.js", "version": "12905055" };
 const mode = "production";
 const assetsBuildDirectory = "build/client";
 const basename = "/";
@@ -2448,10 +2458,10 @@ const routes = {
     caseSensitive: void 0,
     module: route0
   },
-  "routes/projects.$slug": {
-    id: "routes/projects.$slug",
-    parentId: "routes/projects",
-    path: ":slug",
+  "routes/projects_.$slug": {
+    id: "routes/projects_.$slug",
+    parentId: "root",
+    path: "projects/:slug",
     index: void 0,
     caseSensitive: void 0,
     module: route1

@@ -42,7 +42,6 @@ export const links = () => [
   { rel: 'manifest', href: '/manifest.json' },
   { rel: 'icon', href: '/favicon.svg?v=2', type: 'image/svg+xml' },
   { rel: 'apple-touch-icon', href: '/icon-256.png', sizes: '256x256' },
-  { rel: 'author', href: '/humans.txt', type: 'text/plain' },
 ];
 
 const sessionStorage = createCookieSessionStorage({
