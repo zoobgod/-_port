@@ -1,7 +1,7 @@
 import { Footer } from '~/components/footer';
 import { Section } from '~/components/section';
 import { Link as RouterLink, useLoaderData } from '@remix-run/react';
-import { json } from '@remix-run/cloudflare';
+import { json } from '@remix-run/node';
 import { baseMeta } from '~/utils/meta';
 import { getProjectBySlug } from '~/data/projects';
 import styles from './project-detail.module.css';

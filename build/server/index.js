@@ -1,9 +1,10 @@
-import { s, d, e, g, f, i, c, p, r } from "./assets/server-build-BKi3uA6k.js";
+import { s, d, e, g, f, i, c, p, r } from "./assets/server-build-DpgRzWJH.js";
 import "react/jsx-runtime";
+import "node:stream";
+import "@remix-run/node";
 import "@remix-run/react";
 import "isbot";
 import "react-dom/server";
-import "@remix-run/cloudflare";
 import "react";
 import "framer-motion";
 export {

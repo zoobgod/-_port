@@ -1,13 +1,14 @@
 import { jsx } from "react/jsx-runtime";
-import { u as useTheme, a as useInViewport, b as useWindowSize, m as media, T as Transition } from "./server-build-BKi3uA6k.js";
+import { u as useTheme, a as useInViewport, b as useWindowSize, m as media, T as Transition } from "./server-build-DpgRzWJH.js";
 import { useReducedMotion, useSpring } from "framer-motion";
 import { useRef, useEffect, startTransition } from "react";
 import { Cache, TextureLoader, Vector2, WebGLRenderer, LinearSRGBColorSpace, PerspectiveCamera, Scene, MeshPhongMaterial, UniformsUtils, SphereGeometry, Mesh, DirectionalLight, AmbientLight } from "three";
 import { DRACOLoader, GLTFLoader } from "three-stdlib";
+import "node:stream";
+import "@remix-run/node";
 import "@remix-run/react";
 import "isbot";
 import "react-dom/server";
-import "@remix-run/cloudflare";
 function throttle(func, timeFrame) {
   let lastTime = 0;
   return function(...args) {

@@ -1,29 +1,24 @@
 import { jsx, jsxs, Fragment as Fragment$1 } from "react/jsx-runtime";
+import { PassThrough } from "node:stream";
+import { createReadableStreamFromReadable, createCookieSessionStorage, json } from "@remix-run/node";
 import { RemixServer, Link as Link$1, useLocation, useNavigation, useLoaderData, useFetcher, Meta, Links, Outlet, ScrollRestoration, Scripts, useRouteError } from "@remix-run/react";
 import * as isbotModule from "isbot";
-import { renderToReadableStream } from "react-dom/server";
-import { createCookieSessionStorage, json } from "@remix-run/cloudflare";
+import { renderToPipeableStream } from "react-dom/server";
 import { createContext, useContext, forwardRef, useRef, useEffect, useState, memo, Fragment, useCallback, useId, lazy, Suspense } from "react";
 import { useReducedMotion, AnimatePresence, usePresence, useSpring } from "framer-motion";
-async function handleRequest(request, responseStatusCode, responseHeaders, remixContext, loadContext) {
-  const body2 = await renderToReadableStream(
-    /* @__PURE__ */ jsx(RemixServer, { context: remixContext, url: request.url }),
-    {
-      signal: request.signal,
-      onError(error) {
-        console.error(error);
-        responseStatusCode = 500;
-      }
-    }
+const ABORT_DELAY = 5e3;
+function handleRequest(request, responseStatusCode, responseHeaders, remixContext, loadContext) {
+  return isBotRequest(request.headers.get("user-agent")) ? handleBotRequest(
+    request,
+    responseStatusCode,
+    responseHeaders,
+    remixContext
+  ) : handleBrowserRequest(
+    request,
+    responseStatusCode,
+    responseHeaders,
+    remixContext
   );
-  if (isBotRequest(request.headers.get("user-agent"))) {
-    await body2.allReady;
-  }
-  responseHeaders.set("Content-Type", "text/html");
-  return new Response(body2, {
-    headers: responseHeaders,
-    status: responseStatusCode
-  });
 }
 function isBotRequest(userAgent) {
   if (!userAgent) {
@@ -36,6 +31,86 @@ function isBotRequest(userAgent) {
     return isbotModule.default(userAgent);
   }
   return false;
+}
+function handleBotRequest(request, responseStatusCode, responseHeaders, remixContext) {
+  return new Promise((resolve, reject) => {
+    let shellRendered = false;
+    const { pipe, abort } = renderToPipeableStream(
+      /* @__PURE__ */ jsx(
+        RemixServer,
+        {
+          context: remixContext,
+          url: request.url,
+          abortDelay: ABORT_DELAY
+        }
+      ),
+      {
+        onAllReady() {
+          shellRendered = true;
+          const body2 = new PassThrough();
+          const stream = createReadableStreamFromReadable(body2);
+          responseHeaders.set("Content-Type", "text/html");
+          resolve(
+            new Response(stream, {
+              headers: responseHeaders,
+              status: responseStatusCode
+            })
+          );
+          pipe(body2);
+        },
+        onShellError(error) {
+          reject(error);
+        },
+        onError(error) {
+          responseStatusCode = 500;
+          if (shellRendered) {
+            console.error(error);
+          }
+        }
+      }
+    );
+    setTimeout(abort, ABORT_DELAY);
+  });
+}
+function handleBrowserRequest(request, responseStatusCode, responseHeaders, remixContext) {
+  return new Promise((resolve, reject) => {
+    let shellRendered = false;
+    const { pipe, abort } = renderToPipeableStream(
+      /* @__PURE__ */ jsx(
+        RemixServer,
+        {
+          context: remixContext,
+          url: request.url,
+          abortDelay: ABORT_DELAY
+        }
+      ),
+      {
+        onShellReady() {
+          shellRendered = true;
+          const body2 = new PassThrough();
+          const stream = createReadableStreamFromReadable(body2);
+          responseHeaders.set("Content-Type", "text/html");
+          resolve(
+            new Response(stream, {
+              headers: responseHeaders,
+              status: responseStatusCode
+            })
+          );
+          pipe(body2);
+        },
+        onShellError(error) {
+          reject(error);
+        },
+        onError(error) {
+          responseStatusCode = 500;
+          if (shellRendered) {
+            console.error(error);
+          }
+        }
+      }
+    );
+    setTimeout(abort, ABORT_DELAY);
+  });
 }
 const entryServer = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
@@ -1601,29 +1676,29 @@ const links$1 = () => [
   { rel: "apple-touch-icon", href: "/icon-256.png", sizes: "256x256" },
   { rel: "author", href: "/humans.txt", type: "text/plain" }
 ];
-const loader$2 = async ({ request, context }) => {
+const sessionStorage$1 = createCookieSessionStorage({
+  cookie: {
+    name: "__session",
+    httpOnly: true,
+    maxAge: 604800,
+    path: "/",
+    sameSite: "lax",
+    secrets: [process.env.SESSION_SECRET || "dev-session-secret"],
+    secure: process.env.NODE_ENV === "production"
+  }
+});
+const loader$2 = async ({ request }) => {
   const { url: url2 } = request;
   const { pathname } = new URL(url2);
   const pathnameSliced = pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
   const canonicalUrl = `${config.url}${pathnameSliced}`;
-  const { getSession, commitSession } = createCookieSessionStorage({
-    cookie: {
-      name: "__session",
-      httpOnly: true,
-      maxAge: 604800,
-      path: "/",
-      sameSite: "lax",
-      secrets: [context.cloudflare.env.SESSION_SECRET || " "],
-      secure: true
-    }
-  });
-  const session = await getSession(request.headers.get("Cookie"));
+  const session = await sessionStorage$1.getSession(request.headers.get("Cookie"));
   const theme = session.get("theme") || "dark";
   return json(
     { canonicalUrl, theme },
     {
       headers: {
-        "Set-Cookie": await commitSession(session)
+        "Set-Cookie": await sessionStorage$1.commitSession(session)
       }
     }
   );
@@ -1890,27 +1965,27 @@ const route1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   loader: loader$1,
   meta: meta$5
 }, Symbol.toStringTag, { value: "Module" }));
-async function action({ request, context }) {
+const sessionStorage = createCookieSessionStorage({
+  cookie: {
+    name: "__session",
+    httpOnly: true,
+    maxAge: 604800,
+    path: "/",
+    sameSite: "lax",
+    secrets: [process.env.SESSION_SECRET || "dev-session-secret"],
+    secure: process.env.NODE_ENV === "production"
+  }
+});
+async function action({ request }) {
   const formData = await request.formData();
   const theme = formData.get("theme");
-  const { getSession, commitSession } = createCookieSessionStorage({
-    cookie: {
-      name: "__session",
-      httpOnly: true,
-      maxAge: 604800,
-      path: "/",
-      sameSite: "lax",
-      secrets: [context.cloudflare.env.SESSION_SECRET || " "],
-      secure: true
-    }
-  });
-  const session = await getSession(request.headers.get("Cookie"));
+  const session = await sessionStorage.getSession(request.headers.get("Cookie"));
   session.set("theme", theme);
   return json(
     { status: "success" },
     {
       headers: {
-        "Set-Cookie": await commitSession(session)
+        "Set-Cookie": await sessionStorage.commitSession(session)
       }
     }
   );
@@ -2071,7 +2146,7 @@ const styles = {
   cardStatus
 };
 const DisplacementSphere = lazy(
-  () => import("./displacement-sphere-D3jBekaG.js").then((module) => ({ default: module.DisplacementSphere }))
+  () => import("./displacement-sphere-DNDZxreI.js").then((module) => ({ default: module.DisplacementSphere }))
 );
 const links = () => [
   {
