@@ -21,7 +21,7 @@ export function meta({ data }) {
 
   return baseMeta({
     title: projectTitle,
-    description: `Project placeholder page for ${projectTitle}. Full case study will be added soon.`,
+    description: `${projectTitle} project page.`,
   });
 }
 
@@ -38,11 +38,9 @@ export default function ProjectDetailRoute() {
         <h1 className={styles.title}>{project.title}</h1>
         <p className={styles.summary}>{project.summary}</p>
         <div className={styles.placeholder}>
-          <p className={styles.placeholderLabel}>Case Study Status</p>
+          <p className={styles.placeholderLabel}>Status</p>
           <p className={styles.placeholderValue}>{project.status}</p>
-          <p className={styles.placeholderBody}>
-            Detailed narrative, media assets, and campaign outcomes will be published here.
-          </p>
+          <p className={styles.placeholderBody}>Detailed case study will be added.</p>
         </div>
         <RouterLink unstable_viewTransition prefetch="intent" className={styles.back} to="/projects">
           Back to Projects

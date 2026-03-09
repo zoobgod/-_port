@@ -7,7 +7,7 @@ import styles from './contact.module.css';
 export const meta = () => {
   return baseMeta({
     title: 'Contact',
-    description: 'Contact Nick Arkhipov for fashion marketing and campaign collaborations.',
+    description: 'Contact Nick Arkhipov.',
   });
 };
 
@@ -16,15 +16,12 @@ export const Contact = () => {
     <div className={styles.page}>
       <Section className={styles.content} as="section">
         <p className={styles.kicker}>Contact</p>
-        <h1 className={styles.title}>Open for selected collaborations.</h1>
-        <p className={styles.body}>
-          If you are building a fashion brand, launching a collection, or refining a campaign
-          direction, I would be glad to talk.
-        </p>
+        <h1 className={styles.title}>Open for projects.</h1>
+        <p className={styles.body}>For campaign, branding, and marketing work.</p>
         <a className={styles.email} href="mailto:hello@nickarkhipov.com">
           hello@nickarkhipov.com
         </a>
-        <p className={styles.note}>Portfolio owner: {config.name}</p>
+        <p className={styles.note}>{config.name}</p>
       </Section>
       <Footer />
     </div>

@@ -50,7 +50,7 @@ export const links = () => [
 export const loader = async ({ request, context }) => {
   const { url } = request;
   const { pathname } = new URL(url);
-  const pathnameSliced = pathname.endsWith('/') ? pathname.slice(0, -1) : url;
+  const pathnameSliced = pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
   const canonicalUrl = `${config.url}${pathnameSliced}`;
 
   const { getSession, commitSession } = createCookieSessionStorage({
@@ -95,10 +95,7 @@ export default function App() {
   }
 
   useEffect(() => {
-    console.info(
-      `${config.ascii}\n`,
-      `Taking a peek huh? Check out the source code: ${config.repo}\n\n`
-    );
+    console.info(`${config.ascii}\n${config.name}\n${config.repo}`);
   }, []);
 
   return (

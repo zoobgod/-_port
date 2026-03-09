@@ -8,8 +8,7 @@ import styles from './projects.module.css';
 export const meta = () => {
   return baseMeta({
     title: 'Projects',
-    description:
-      'Project overview for fashion marketing work by Nick Arkhipov. Placeholder pages are ready for upcoming case studies.',
+    description: 'Project index for Nick Arkhipov.',
   });
 };
 
@@ -19,10 +18,7 @@ export default function ProjectsRoute() {
       <Section className={styles.header} as="header">
         <p className={styles.kicker}>Projects</p>
         <h1 className={styles.title}>Selected Work</h1>
-        <p className={styles.copy}>
-          Every card below opens a dedicated project page. Content will be expanded with full
-          case studies soon.
-        </p>
+        <p className={styles.copy}>Case studies in progress.</p>
       </Section>
       <Section className={styles.gridWrap} as="section">
         <div className={styles.grid}>

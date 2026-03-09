@@ -18,18 +18,17 @@ export function Error({ error }) {
     switch (error.status) {
       case 404:
         return {
-          summary: 'Error: redacted',
-          message:
-            'This page could not be found. It either doesn’t exist or was deleted. Or perhaps you don’t exist and this webpage couldn’t find you.',
+          summary: 'Page not found',
+          message: 'The page does not exist.',
         };
       case 405:
         return {
-          summary: 'Error: method denied',
+          summary: 'Method not allowed',
           message: error.data,
         };
       default:
         return {
-          summary: 'Error: anomaly',
+          summary: 'Unexpected error',
           message: error.statusText || error.data || error.toString(),
         };
     }
@@ -106,7 +105,7 @@ export function Error({ error }) {
                     href="https://www.youtube.com/watch?v=EuQzHGcsjlA"
                     icon="chevron-right"
                   >
-                    Emotional support
+                    Support
                   </Button>
                 ) : (
                   <Button
@@ -117,7 +116,7 @@ export function Error({ error }) {
                     href="/"
                     icon="chevron-right"
                   >
-                    Back to homepage
+                    Back to home
                   </Button>
                 )}
               </div>
@@ -133,27 +132,9 @@ export function Error({ error }) {
                 src={flatlined ? flatlineVideo : notFoundVideo}
                 placeholder={flatlined ? flatlinePoster : notFoundPoster}
               />
-              {flatlined ? (
-                <a
-                  className={styles.credit}
-                  data-visible={visible}
-                  href="https://www.imdb.com/title/tt0318871/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Animation from Berserk (1997)
-                </a>
-              ) : (
-                <a
-                  className={styles.credit}
-                  data-visible={visible}
-                  href="https://www.imdb.com/title/tt0113568/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Animation from Ghost in the Shell (1995)
-                </a>
-              )}
+              <span className={styles.credit} data-visible={visible}>
+                Background video
+              </span>
             </div>
           </>
         )}

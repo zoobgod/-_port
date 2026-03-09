@@ -1,9 +1,9 @@
 {
-  "name": "portfolio",
-  "homepage": "https://hamishw.com",
-  "description": "Portfolio site for Hamish Williams",
-  "repository": "https://github.com/HamishMW/portfolio.git",
-  "author": "Hamish Williams",
+  "name": "nick-arkhipov-portfolio",
+  "homepage": "https://nickarkhipov.com",
+  "description": "Minimal portfolio website for Nick Arkhipov",
+  "repository": "https://github.com/zoomzoob/K_port.git",
+  "author": "Nick Arkhipov",
   "sideEffects": false,
   "type": "module",
   "scripts": {

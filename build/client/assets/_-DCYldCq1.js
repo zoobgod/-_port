@@ -1,0 +1,1 @@
+import{u as o,j as t}from"./components-C5Mtxw5H.js";import{E as e}from"./error-9cQypj0i.js";import"./text-BvesrsoK.js";import"./useInViewport-CA1nro3_.js";const u=()=>[{title:"404 | Nick Arkhipov"}];function p(){const r=o();return t.jsx(e,{error:r})}export{p as ErrorBoundary,u as meta};

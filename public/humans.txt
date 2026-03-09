@@ -1,39 +1,14 @@
-__  __  __
-\ \ \ \ \/
- \ \/\ \
-  \/  \/
+Nick Arkhipov Portfolio
+https://nickarkhipov.com
 
-The humans.txt file explains the team, technology,
-and graphic assets behind this site humanstxt.org.
+Owner
+Nick Arkhipov
 
-_______________________________________________________________________________
-
-DESIGNER | デザイナー
-
-Hamish Williams
-Hand crafted design & web development
-
-Design tools:
-Figma
-Photoshop
-Blender
-
-twitter.com/hamishmw
-github.com/hamishmw
-
-_______________________________________________________________________________
-
-TECHNOLOGY | テクノロジー
-
-React
+Stack
 Remix
+React
 Three.js
 Framer Motion
 
-_______________________________________________________________________________
-
-FONTS | フォント
-
-Gotham
-IPA Gothic Regular
-Hiragino Kaku Gothic W8
+Design
+Minimal black and white interface

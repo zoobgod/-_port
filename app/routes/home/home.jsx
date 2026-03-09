@@ -30,9 +30,8 @@ export const links = () => [
 
 export const meta = () => {
   return baseMeta({
-    title: 'Fashion Marketing Portfolio',
-    description:
-      'Portfolio website for Nick Arkhipov, a fashion marketer focused on brand storytelling, campaigns, and creative direction.',
+    title: 'Portfolio',
+    description: 'Minimal portfolio website for Nick Arkhipov.',
   });
 };
 
@@ -80,11 +79,8 @@ export const Home = () => {
         </Suspense>
         <div className={styles.heroInner}>
           <p className={styles.kicker}>{config.name.toUpperCase()}</p>
-          <h1 className={styles.title}>Fashion Marketing with Clarity, Taste, and Impact.</h1>
-          <p className={styles.description}>
-            I help fashion brands shape stories, craft campaigns, and position ideas that move
-            people.
-          </p>
+          <h1 className={styles.title}>Fashion Marketing, Simplified.</h1>
+          <p className={styles.description}>Strategy. Campaigns. Brand direction.</p>
           <div className={styles.actions}>
             <RouterLink unstable_viewTransition prefetch="intent" className={styles.cta} to="/projects">
               View Projects
@@ -109,10 +105,9 @@ export const Home = () => {
         data-visible={visibleSections.includes('about')}
       >
         <p className={styles.sectionLabel}>About</p>
-        <h2 className={styles.sectionTitle}>Built for modern brands and long-term relevance.</h2>
+        <h2 className={styles.sectionTitle}>Clear ideas. Precise execution.</h2>
         <p className={styles.aboutText}>
-          From launch campaigns to ongoing brand systems, I combine cultural awareness with
-          execution. The focus is always the same: make each touchpoint feel intentional.
+          I build focused marketing systems for fashion brands.
         </p>
       </Section>
 
