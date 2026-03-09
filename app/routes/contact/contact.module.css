@@ -1,0 +1,59 @@
+.page {
+  min-height: 100svh;
+}
+
+.content {
+  min-height: calc(100svh - 130px);
+  padding-top: clamp(6rem, 14vh, 10rem);
+  padding-bottom: clamp(3rem, 8vw, 5rem);
+}
+
+.kicker {
+  margin: 0;
+  color: var(--textLight);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-indent: 0.2em;
+  font-size: 0.76rem;
+}
+
+.title {
+  margin: 0.75rem 0 0;
+  font-size: clamp(2rem, 7vw, 5.3rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  color: var(--textTitle);
+  max-width: 14ch;
+}
+
+.body {
+  margin: 1.2rem 0 0;
+  color: var(--textBody);
+  max-width: 58ch;
+  font-size: clamp(1rem, 0.92rem + 0.32vw, 1.15rem);
+}
+
+.email {
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+  display: inline-block;
+  text-decoration: none;
+  color: var(--textTitle);
+  border: 1px solid color-mix(in lab, var(--text) 26%, transparent);
+  padding: 0.85rem 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  transition: transform var(--durationM) var(--bezierFastoutSlowin),
+    border-color var(--durationM) var(--bezierFastoutSlowin);
+}
+
+.email:hover {
+  transform: translate3d(0, -2px, 0);
+  border-color: color-mix(in lab, var(--text) 50%, transparent);
+}
+
+.note {
+  margin: 1rem 0 0;
+  color: var(--textLight);
+  font-size: 0.85rem;
+}
