@@ -3,8 +3,8 @@
 }
 
 .content {
-  min-height: calc(100svh - 130px);
-  padding-top: clamp(6rem, 14vh, 10rem);
+  min-height: calc(100svh - 96px);
+  padding-top: clamp(5rem, 10vh, 7.5rem);
   padding-bottom: clamp(3rem, 8vw, 5rem);
   display: grid;
   grid-template-columns: minmax(260px, 420px) minmax(0, 1fr);
@@ -27,7 +27,7 @@
 }
 
 .bio {
-  max-width: 70ch;
+  width: min(100%, 70ch);
 }
 
 .kicker {
@@ -51,6 +51,7 @@
   color: var(--textBody);
   font-size: clamp(1rem, 0.9rem + 0.2vw, 1.1rem);
   line-height: 1.65;
+  text-wrap: pretty;
 }
 
 @media (--mediaTablet) {
@@ -61,5 +62,22 @@
 
   .photoWrap {
     max-width: 360px;
+  }
+
+  .bio {
+    width: 100%;
+  }
+}
+
+@media (--mediaMobile) {
+  .content {
+    min-height: auto;
+    padding-top: clamp(4.7rem, 13vw, 5.6rem);
+  }
+}
+
+@media (max-width: 430px) {
+  .photoWrap {
+    width: min(100%, 320px);
   }
 }

@@ -1,11 +1,12 @@
 @layer layout {
   .container {
     width: 100%;
+    min-height: 100svh;
     position: relative;
     transition: opacity 0.4s var(--bezierFastoutSlowin);
 
     &[data-loading='true'] {
-      opacity: 0;
+      opacity: 0.72;
     }
   }
 

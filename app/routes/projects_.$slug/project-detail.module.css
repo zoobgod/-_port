@@ -3,8 +3,8 @@
 }
 
 .content {
-  min-height: calc(100svh - 130px);
-  padding-top: clamp(6rem, 14vh, 10rem);
+  min-height: calc(100svh - 96px);
+  padding-top: clamp(5rem, 10vh, 7.5rem);
   padding-bottom: clamp(3rem, 8vw, 5rem);
 }
 
@@ -17,7 +17,7 @@
   display: flex;
   justify-content: space-between;
   gap: 0.8rem;
-  max-width: 760px;
+  width: min(100%, 760px);
 }
 
 .title {
@@ -26,14 +26,16 @@
   line-height: 0.98;
   letter-spacing: -0.04em;
   font-size: clamp(2rem, 8vw, 5.8rem);
-  max-width: 780px;
+  width: min(100%, 780px);
+  text-wrap: balance;
 }
 
 .summary {
   margin: 1.25rem 0 0;
   color: var(--textBody);
-  max-width: 64ch;
+  width: min(100%, 64ch);
   font-size: clamp(1rem, 0.92rem + 0.35vw, 1.15rem);
+  text-wrap: pretty;
 }
 
 .metaLine {
@@ -42,14 +44,19 @@
   font-size: 0.8rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  width: min(100%, 780px);
+  line-height: 1.5;
 }
 
 .placeholder {
   margin-top: clamp(1.4rem, 3.8vw, 2rem);
   border: 1px solid color-mix(in lab, var(--text) 20%, transparent);
   background: color-mix(in lab, var(--text) 3%, transparent);
-  max-width: 780px;
+  width: min(100%, 780px);
   padding: clamp(1rem, 2vw, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .placeholderLabel {
@@ -70,6 +77,8 @@
 .placeholderBody {
   margin: 0.8rem 0 0;
   color: var(--textBody);
+  line-height: 1.6;
+  text-wrap: pretty;
 }
 
 .list {
@@ -101,7 +110,7 @@
 
 .related {
   margin-top: clamp(1.4rem, 4vw, 2.2rem);
-  max-width: 980px;
+  width: min(100%, 980px);
 }
 
 .relatedGrid {
@@ -117,6 +126,9 @@
   background: color-mix(in lab, var(--text) 3%, transparent);
   padding: 0.95rem;
   color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   transition: transform var(--durationM) var(--bezierFastoutSlowin),
     border-color var(--durationM) var(--bezierFastoutSlowin);
 }
@@ -135,6 +147,11 @@
   display: flex;
   justify-content: space-between;
   gap: 0.45rem;
+  width: 100%;
+}
+
+.relatedMeta span {
+  flex-shrink: 0;
 }
 
 .relatedTitle {
@@ -148,6 +165,8 @@
   margin: 0.5rem 0 0;
   color: var(--textBody);
   font-size: 0.93rem;
+  line-height: 1.55;
+  text-wrap: pretty;
 }
 
 .relatedStatus {
@@ -159,7 +178,22 @@
 }
 
 @media (--mediaMobile) {
+  .content {
+    min-height: auto;
+    padding-top: clamp(4.7rem, 13vw, 5.6rem);
+  }
+
+  .kicker {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .relatedGrid {
     grid-template-columns: 1fr;
+  }
+
+  .relatedMeta {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

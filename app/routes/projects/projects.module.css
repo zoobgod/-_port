@@ -3,7 +3,7 @@
 }
 
 .header {
-  padding-top: clamp(6rem, 14vh, 10rem);
+  padding-top: clamp(5rem, 10vh, 7.5rem);
   padding-bottom: clamp(2rem, 4vw, 3rem);
 }
 
@@ -26,9 +26,10 @@
 
 .copy {
   margin: 1.25rem 0 0;
-  max-width: 62ch;
+  width: min(100%, 62ch);
   color: var(--textBody);
   font-size: clamp(1rem, 0.92rem + 0.32vw, 1.15rem);
+  text-wrap: pretty;
 }
 
 .gridWrap {
@@ -40,7 +41,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 12px;
-  max-width: 980px;
+  width: min(100%, 980px);
 }
 
 .card {
@@ -59,6 +60,7 @@
   padding: clamp(1.1rem, 2vw, 1.5rem);
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 0.75rem;
   transition: transform var(--durationM) var(--bezierFastoutSlowin),
     border-color var(--durationM) var(--bezierFastoutSlowin),
@@ -79,6 +81,11 @@
   display: flex;
   justify-content: space-between;
   gap: 0.6rem;
+  width: 100%;
+}
+
+.meta span {
+  flex-shrink: 0;
 }
 
 .cardTitle {
@@ -92,6 +99,7 @@
   margin: 0;
   color: var(--textBody);
   max-width: 54ch;
+  text-wrap: pretty;
 }
 
 .status {
@@ -103,6 +111,15 @@
 }
 
 @media (--mediaMobile) {
+  .header {
+    padding-top: clamp(4.7rem, 13vw, 5.6rem);
+  }
+
+  .meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .grid {
     grid-template-columns: 1fr;
   }
