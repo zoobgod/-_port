@@ -1,13 +1,9 @@
 @layer layout {
   .toggle {
-    --offset: var(--spaceXS);
-    --inset: calc(var(--spaceOuter) - var(--offset));
-
-    position: fixed;
-    top: var(--inset);
-    right: var(--inset);
-    z-index: var(--zIndex4);
+    position: static;
+    z-index: var(--zIndex2);
     display: none;
+    margin-left: auto;
 
     @media (--mediaMobile), (--mediaMobileLS) {
       display: flex;
