@@ -4,6 +4,9 @@
 
 .hero {
   min-height: 100svh;
+  width: 100vw;
+  max-width: none;
+  margin-inline: calc(50% - 50vw);
   display: grid;
   align-items: center;
   position: relative;
