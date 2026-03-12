@@ -80,6 +80,14 @@
   text-wrap: pretty;
 }
 
+.location {
+  margin: 1rem 0 0;
+  color: var(--textLight);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 @media (--mediaMobile) {
   .content {
     min-height: auto;

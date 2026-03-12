@@ -25,20 +25,25 @@ export const About = () => {
         <div className={styles.bio}>
           <p className={styles.kicker}>About Me</p>
           <h1 className={styles.title}>Nick Arkhipov</h1>
-          <p className={styles.text}>
-            Born in Moscow, Russia in 1999, Nick is a 26-year-old fashion marketer.
+          <p className={styles.lead}>
+            Emerging Fashion Merchandising Professional | Fashion Merchandising BBA Student |
+            Visual Merchandising, Consumer Insight, Product Analysis & Trend Alignment
           </p>
           <p className={styles.text}>
-            He lived most of his life in Russia, then moved to the United States to pursue
-            fashion, where he studied Fashion Marketing in Dallas, Texas.
+            I am a senior Fashion Merchandising student at LIM College with hands-on experience in
+            visual merchandising, styling, and inventory support at PFH Resale. I have developed a
+            strong foundation in analyzing product data, identifying trend opportunities, and
+            aligning merchandise with customer demand.
           </p>
           <p className={styles.text}>
-            His focus is fashion strategy, brand positioning, and colour planning for footwear and
-            accessories.
+            My technical proficiency in Adobe Creative Suite, Microsoft Excel, PowerBi, and PLM
+            systems allows me to create concise reporting, organize assortments, and support
+            merchandising workflow. I am motivated by the analytical side of corporate
+            merchandising and how data informs product planning and buying decisions.
           </p>
           <p className={styles.text}>
-            Outside work, he is a jet skiing enthusiast and keeps close ties to fashion culture,
-            trends, and visual direction.
+            My goal is to contribute to a merchandising team where I can apply my analytical
+            mindset, teamwork, and creative understanding of fashion to support brand growth.
           </p>
         </div>
       </Section>

@@ -46,6 +46,14 @@
   letter-spacing: -0.03em;
 }
 
+.lead {
+  margin: 1rem 0 0;
+  color: var(--textTitle);
+  font-size: clamp(1rem, 0.94rem + 0.22vw, 1.15rem);
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
 .text {
   margin: 1rem 0 0;
   color: var(--textBody);
