@@ -56,6 +56,8 @@
   gap: 12px;
   margin-top: clamp(1.2rem, 3vw, 2rem);
   justify-content: start;
+  align-items: stretch;
+  width: min(100%, 720px);
 }
 
 .cta,
@@ -80,6 +82,8 @@
   text-transform: uppercase;
   border: 1px solid color-mix(in lab, var(--text) 35%, transparent);
   white-space: nowrap;
+  line-height: 1.1;
+  text-align: center;
 }
 
 .cta {
@@ -272,7 +276,8 @@
   }
 
   .featuredHead {
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .grid {

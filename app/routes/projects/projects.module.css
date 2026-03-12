@@ -65,6 +65,7 @@
   transition: transform var(--durationM) var(--bezierFastoutSlowin),
     border-color var(--durationM) var(--bezierFastoutSlowin),
     background-color var(--durationM) var(--bezierFastoutSlowin);
+  overflow: hidden;
 }
 
 .card:hover {

@@ -1,5 +1,4 @@
 import { useId } from 'react';
-import { Button } from '~/components/button';
 import { useTheme } from '~/components/theme-provider';
 import styles from './theme-toggle.module.css';
 
@@ -9,8 +8,8 @@ export const ThemeToggle = ({ isMobile, ...rest }) => {
   const maskId = `${id}theme-toggle-mask`;
 
   return (
-    <Button
-      iconOnly
+    <button
+      type="button"
       className={styles.toggle}
       data-mobile={isMobile}
       aria-label="Toggle theme"
@@ -36,6 +35,6 @@ export const ThemeToggle = ({ isMobile, ...rest }) => {
           r="12"
         />
       </svg>
-    </Button>
+    </button>
   );
 };
